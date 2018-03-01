@@ -10,6 +10,7 @@
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "0.0.3",
+    "normalize.css": "^8.0.0",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
