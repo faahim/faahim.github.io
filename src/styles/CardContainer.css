@@ -3,8 +3,11 @@
   grid-template-columns: repeat(2, minmax(300px, 1fr));
   grid-template-rows: repeat(2, 240px);
   grid-template-areas: "card1 card2" "card3 card4";
-  text-align: center; }
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 25px 5px #f3f2f28c;
+  overflow: hidden; }
   .card-container .card {
     display: grid;
     place-items: center center;
-    padding: 20px; }
+    padding: 30px; }
