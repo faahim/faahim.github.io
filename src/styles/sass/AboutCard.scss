@@ -1,11 +1,6 @@
 .about-card {
   background-color: #ededed;
   display: grid;
-  svg {
-    position: absolute;
-    top: 70px;
-    left: 50px;
-  }
   p, h1 {
     z-index: 1;
   }
