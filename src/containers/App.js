@@ -3,10 +3,18 @@ import CardContainer from './CardContainer';
 import '../styles/App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      app: <CardContainer/>
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <CardContainer/>
+        {this.state.app}
       </div>
     );
   }
