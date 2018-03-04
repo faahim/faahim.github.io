@@ -12,33 +12,13 @@ class CardContainer extends Component {
 
   render() {
     const {clickHandler} = this.props;
-    const allCards = [
-     {
-       name: "about",
-       component: <AboutCard onClick={clickHandler}/>
-     },
-     {
-       name: "projects",
-       component: <ProjectsCard onClick={clickHandler}/>
-     },
-     {
-       name: "writings",
-       component: <WritingsCard onClick={clickHandler}/>
-     },
-     {
-       name: "contact",
-       component: <ContactsCard onClick={clickHandler}/>
-     }
-    ];
 
     return(
       <div className="card-container">
-        {this.props.choosenCard == null && allCards.map(item => item.component)}
-        {this.props.choosenCard && allCards.map(item => {
-          if(item.name == this.props.choosenCard) {
-            return item.component
-          }
-        })}
+        <AboutCard onClick={clickHandler}/>
+        <ProjectsCard onClick={clickHandler}/>
+        <WritingsCard onClick={clickHandler}/>
+        <ContactsCard onClick={clickHandler}/>
       </div>
     )
   }
