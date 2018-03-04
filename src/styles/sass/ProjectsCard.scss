@@ -1,3 +1,11 @@
 .projects-card {
   background-color: #F7E1E1;
+  svg {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+  }
+  p, h2 {
+    z-index: 1;
+  }
 }
