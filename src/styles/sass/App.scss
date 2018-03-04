@@ -1,6 +1,47 @@
 .App {
-    background-color: #4376F0;
+    // background-color: #4376F0;
     display: grid;
     max-height: 100vh;
     padding: 100px 150px;
+    position: relative;
+    &.single-card {
+        svg {
+            opacity: 0;
+        }
+    }
+    svg {
+        position: fixed;
+        // animation: float 10s infinite;
+        transition: all 1s;
+        &.about-svg {
+            top: 50px;
+            left: 150px;
+        }
+        &.projects-svg {
+            top: 120px;
+            right: 200px;
+        }
+        &.expand {
+            opacity: 1;
+            transform: scale(30);
+        }
+    }
+}
+
+@keyframes float {
+    20% {
+        transform: scale(.8) rotate(15deg);
+    }
+
+    45% {
+        transform: scale(1.1) rotate(0);
+    }
+
+    60% {
+        transform: scale(1) rotate(-20deg);
+    }
+
+    85% {
+        transform: scale(1.3) rotate(6deg);
+    }
 }
