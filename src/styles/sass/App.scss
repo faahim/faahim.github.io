@@ -4,26 +4,34 @@
     max-height: 100vh;
     padding: 100px 150px;
     position: relative;
-    &.single-card {
-        svg {
+    &.single-card > svg {
             opacity: 0;
-        }
+            transform: scale(0) rotate(125deg);
     }
     svg {
         position: fixed;
         // animation: float 10s infinite;
+        z-index: -1;
         transition: all 1s;
         &.about-svg {
-            top: 50px;
-            left: 150px;
+            top: 80px;
+            left: 200px;
         }
         &.projects-svg {
-            top: 120px;
-            right: 200px;
+            top: 150px;
+            right: 450px;
+        }
+        &.writings-svg {
+            bottom: 120px;
+            left: 280px;
+        }
+        &.contact-svg {
+            bottom: 160px;
+            right: 150px;
         }
         &.expand {
             opacity: 1;
-            transform: scale(30);
+            transform: scale(28) rotate(75deg);
         }
     }
 }
