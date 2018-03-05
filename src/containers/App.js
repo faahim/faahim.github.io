@@ -4,7 +4,7 @@ import AboutPage from '../components/AboutPage';
 import ProjectsPage from '../components/ProjectsPage';
 import WritingsPage from '../components/WritingsPage';
 import ContactsPage from '../components/ContactsPage';
-import { Svg1, Svg2} from '../components/Svgs';
+import { Svg1, Svg2, Svg3, Svg4} from '../components/Svgs';
 import '../styles/App.css';
 import WritingsCard from '../components/WritingsCard';
 
@@ -18,6 +18,7 @@ class App extends Component {
     }
 
     this.clickHandler = this.clickHandler.bind(this);
+    this.returnHome = this.returnHome.bind(this);
   }
 
   clickHandler = param => event => {
@@ -30,23 +31,33 @@ class App extends Component {
     });
   }
 
+  returnHome() {
+    this.setState({
+      cardSelected: false,
+      choosenCard: null
+    }, () => {
+      const expandedSvg = document.getElementsByClassName("expand")[0];
+      expandedSvg.classList.remove("expand");
+    })
+  }
+
   render() {
     const pages = [
       {
         name: "about",
-        component: <AboutPage/>
+        component: <AboutPage returnBtn={this.returnHome}/>
       },
       {
         name: "projects",
-        component: <ProjectsPage/>
+        component: <ProjectsPage returnBtn={this.returnHome}/>
       },
       {
         name: "writings",
-        component: <WritingsPage/>
+        component: <WritingsPage returnBtn={this.returnHome}/>
       },
       {
         name: "contact",
-        component: <ContactsPage/>
+        component: <ContactsPage returnBtn={this.returnHome}/>
       }
     ];
     return (
@@ -59,6 +70,8 @@ class App extends Component {
         })}
         <Svg1/>
         <Svg2/>
+        <Svg3/>
+        <Svg4/>
       </div>
     );
   }
