@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/BtnBack.css';
+import Anime from 'react-anime';
 // import btnIcon from '../assets/Btn.svg';
 
 const BtnIcon = props => {
@@ -13,7 +14,9 @@ const BtnIcon = props => {
 
 const BackToHomeBtn = props => {
   return(
-    <button onClick={props.handleClick} className="btn-back"><BtnIcon/></button>
+    <Anime easing="easeInSine" elasticity={800} duration={500} scale={[0, 1]}>
+      <button onClick={props.handleClick} className="btn-back"><BtnIcon/></button>
+    </Anime>
   )
 }
 
