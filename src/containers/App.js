@@ -6,7 +6,6 @@ import WritingsPage from '../components/WritingsPage';
 import ContactsPage from '../components/ContactsPage';
 import { Svg1, Svg2, Svg3, Svg4} from '../components/Svgs';
 import '../styles/App.css';
-import WritingsCard from '../components/WritingsCard';
 
 class App extends Component {
   constructor() {
