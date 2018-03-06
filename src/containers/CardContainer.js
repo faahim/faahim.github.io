@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Delay from 'react-delay';
 import AboutCard from '../components/AboutCard';
 import ProjectsCard from '../components/ProjectsCard';
 import WritingsCard from '../components/WritingsCard';
@@ -15,14 +14,12 @@ class CardContainer extends Component {
     const {clickHandler} = this.props;
 
     return(
-      <div className="card-container">
-        <Delay wait={750}>
-          <AboutCard onClick={clickHandler}/>
-          <ProjectsCard onClick={clickHandler}/>
-          <WritingsCard onClick={clickHandler}/>
-          <ContactsCard onClick={clickHandler}/>
-        </Delay>
-      </div>
+        <div className="card-container">
+            <AboutCard onClick={clickHandler}/>
+            <ProjectsCard onClick={clickHandler}/>
+            <WritingsCard onClick={clickHandler}/>
+            <ContactsCard onClick={clickHandler}/>
+        </div>
     )
   }
 }
