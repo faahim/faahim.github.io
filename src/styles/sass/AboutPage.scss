@@ -1,18 +1,35 @@
 @import "./shared.scss";
 
 .about-page {
+  height: 100vh;
   color: #fff;
   padding: 60px 0;
+  position: relative;
   @include goingLarge(1000) {
-    padding: 100px;
+    padding: 100px 200px 100px 100px;
   }
   @include goingLarge(1400) {
-    padding: 150px 200px;
+    padding: 150px 400px 100px 200px;
+  }
+  button {
+    margin-bottom: 30px;
   }
   .page-content {
+    position: relative;
     padding-left: 20px;
+    height: 100%;
     @include goingLarge(1100) {
       padding-left: 40px;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.8rem;
+      font-weight: 500;
     }
   }
 }
