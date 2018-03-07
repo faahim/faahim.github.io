@@ -4,7 +4,7 @@ import '../styles/AboutCard.css';
 
 function AboutCard(props) {
   return(
-    <Anime easing="easeInSine" opacity={[0, 1]} scale={[1.3, 1]} delay={100} duration={300}>
+    <Anime easing="easeInSine" opacity={[0, 1]} scale={[0.7, 1]} delay={100} duration={300}>
       <div className="card about-card" onClick={props.onClick('about')}>
         <h2>I'm Faahim.</h2>
         <p>I'm a Front-End developer. Click for more.</p>

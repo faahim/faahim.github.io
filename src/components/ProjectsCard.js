@@ -4,7 +4,7 @@ import Anime from 'react-anime';
 
 function ProjectCard(props) {
   return(
-    <Anime easing="easeInSine" scale={[1.3, 1]} opacity={[0, 1]} delay={500} duration={300}>
+    <Anime easing="easeInSine" scale={[0.7, 1]} opacity={[0, 1]} delay={500} duration={300}>
       <div className="card projects-card" onClick={props.onClick('projects')}>
         <h2>Projects and Contribution</h2>
         <p>Checkout some of the projects I've loved working on</p>
