@@ -12,14 +12,15 @@ class CardContainer extends Component {
 
   render() {
     const {clickHandler} = this.props;
+    const scaleArr = window.innerWidth < 1000 ? [0.5, 1] : [1.3, 1];
 
     return(
-        <div className="card-container">
-            <AboutCard onClick={clickHandler}/>
-            <ProjectsCard onClick={clickHandler}/>
-            <WritingsCard onClick={clickHandler}/>
-            <ContactsCard onClick={clickHandler}/>
-        </div>
+      <div className="card-container">
+        <AboutCard onClick={clickHandler} scaleArr={scaleArr}/>
+        <ProjectsCard onClick={clickHandler} scaleArr={scaleArr}/>
+        <WritingsCard onClick={clickHandler} scaleArr={scaleArr}/>
+        <ContactsCard onClick={clickHandler} scaleArr={scaleArr}/>
+      </div>
     )
   }
 }
