@@ -1,3 +1,5 @@
+@import "./shared.scss";
+
 .App {
     display: grid;
     min-height: 100vh;
@@ -18,44 +20,79 @@
         &.about-svg {
             top: 95px;
             right: 20px;
+            @include goingLarge(1100) {
+                top: 75px;
+                right: 250px;
+            }
+            @include goingLarge(1440) {
+                top: 165px;
+                right: 350px;
+            }
+            @include goingLarge(1920) {
+                top: 225px;
+                right: 460px;
+            }
         }
         &.projects-svg {
             bottom: 75px;
             left: 25px;
+            @include goingLarge(1100) {
+                bottom: 50px;
+                left: 195px;
+            }
+            @include goingLarge(1440) {
+                bottom: 175px;
+                left: 255px;
+            }
+            @include goingLarge(1920) {
+                bottom: 255px;
+                left: 495px;
+            }
         }
         &.writings-svg {
             bottom: 20px;
-            left: 220px;
+            right: 20px;
+            @include goingLarge(1100) {
+                bottom: 120px;
+                right: 120px;
+            }
+            @include goingLarge(1440) {
+                bottom: 180px;
+                right: 140px;
+            }
+            @include goingLarge(1920) {
+                bottom: 180px;
+                right: 250px;
+            }
         }
         &.contact-svg {
             top: 30px;
             left: 40px;
+            @include goingLarge(1100) {
+                top: 80px;
+                left: 100px;
+            }
+            @include goingLarge(1440) {
+                top: 130px;
+                left: 150px;
+            }
+            @include goingLarge(1920) {
+                top: 170px;
+                left: 350px;
+            }
         }
         &.expand {
             opacity: 1;
-            transform: scale(28) rotate(75deg);
+            transform: scale(15) rotate(125deg);
+            @include goingLarge(600) {
+                transform: scale(18) rotate(125deg);
+            }
+            @include goingLarge(900) {
+                transform: scale(20) rotate(125deg);
+            }
+            @include goingLarge(1100) {
+                transform: scale(30) rotate(125deg);
+            }
         }
     }
 }
-
-@keyframes float {
-    20% {
-        transform: scale(.8) rotate(15deg);
-    }
-
-    45% {
-        transform: scale(1.1) rotate(0);
-    }
-
-    60% {
-        transform: scale(1) rotate(-20deg);
-    }
-
-    85% {
-        transform: scale(1.3) rotate(6deg);
-    }
-}
-
-
-// For larger screen
-// padding: 100px 150px;
