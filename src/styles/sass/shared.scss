@@ -1,0 +1,5 @@
+//Hasta Luego Mixins
+
+@mixin goingLarge($width) {
+  @media (min-width: $width/16+em) { @content; }
+}
