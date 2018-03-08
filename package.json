@@ -8,8 +8,6 @@
   },
   "license": "MIT",
   "homepage": "https://faahim.github.io/",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "0.0.3",
@@ -28,6 +26,8 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
