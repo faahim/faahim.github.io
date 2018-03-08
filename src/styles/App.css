@@ -1,5 +1,87 @@
 .App {
-  background-color: #4376F0;
   display: grid;
+  min-height: 100vh;
   max-height: 100vh;
-  padding: 100px 150px; }
+  box-sizing: border-box;
+  padding: 0 20px;
+  position: relative;
+  font-family: 'Quicksand', sans-serif; }
+  .App.single-card > svg {
+    opacity: 0;
+    transform: scale(0) rotate(125deg); }
+  .App svg {
+    position: fixed;
+    z-index: -1;
+    transition: all 1s; }
+    .App svg.about-svg {
+      top: 95px;
+      right: 20px; }
+      @media (min-width: 68.75em) {
+        .App svg.about-svg {
+          top: 75px;
+          right: 250px; } }
+      @media (min-width: 90em) {
+        .App svg.about-svg {
+          top: 165px;
+          right: 350px; } }
+      @media (min-width: 120em) {
+        .App svg.about-svg {
+          top: 225px;
+          right: 460px; } }
+    .App svg.projects-svg {
+      bottom: 75px;
+      left: 25px; }
+      @media (min-width: 68.75em) {
+        .App svg.projects-svg {
+          bottom: 50px;
+          left: 195px; } }
+      @media (min-width: 90em) {
+        .App svg.projects-svg {
+          bottom: 175px;
+          left: 255px; } }
+      @media (min-width: 120em) {
+        .App svg.projects-svg {
+          bottom: 255px;
+          left: 495px; } }
+    .App svg.writings-svg {
+      bottom: 20px;
+      right: 20px; }
+      @media (min-width: 68.75em) {
+        .App svg.writings-svg {
+          bottom: 120px;
+          right: 120px; } }
+      @media (min-width: 90em) {
+        .App svg.writings-svg {
+          bottom: 180px;
+          right: 140px; } }
+      @media (min-width: 120em) {
+        .App svg.writings-svg {
+          bottom: 180px;
+          right: 250px; } }
+    .App svg.contact-svg {
+      top: 30px;
+      left: 40px; }
+      @media (min-width: 68.75em) {
+        .App svg.contact-svg {
+          top: 80px;
+          left: 100px; } }
+      @media (min-width: 90em) {
+        .App svg.contact-svg {
+          top: 130px;
+          left: 150px; } }
+      @media (min-width: 120em) {
+        .App svg.contact-svg {
+          top: 170px;
+          left: 350px; } }
+    .App svg.expand {
+      opacity: 1;
+      transform: scale(15) rotate(125deg); }
+      @media (min-width: 37.5em) {
+        .App svg.expand {
+          transform: scale(25) rotate(125deg); } }
+      @media (min-width: 62.5em) {
+        .App svg.expand {
+          transform: scale(30) rotate(125deg); } }
+      @media (min-width: 100em) {
+        .App svg.expand {
+          transform: scale(35) rotate(125deg); } }
