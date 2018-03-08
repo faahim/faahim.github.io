@@ -11,11 +11,9 @@
   @include goingLarge(1400) {
     padding: 150px 500px 100px 200px;
   }
-  button {
-    margin-bottom: 30px;
-  }
   p.page-tag {
     display: none;
+    text-shadow: 2px 6px 10px #bd26e2;
     @include goingLarge(1000) {
       display: block;
       font-size: 5rem;
@@ -24,7 +22,7 @@
       top: 40%;
       // left: -150px;
       font-weight: 700;
-      opacity: 0.2;
+      opacity: 0.1;
     }
     @include goingLarge(1400) {
       font-size: 6rem;
