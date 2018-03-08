@@ -1,18 +1,81 @@
 @import "./shared.scss";
 
 .projects-page {
+  height: 100vh;
+  position: relative;
   color: #fff;
   padding: 60px 0;
   @include goingLarge(1000) {
-    padding: 100px;
+    padding: 100px 100px 30px;
   }
   @include goingLarge(1400) {
-    padding: 150px 200px;
+    padding: 150px 200px 30px;
   }
   .page-content {
+    position: relative;
+    height: 100%;
     padding-left: 20px;
     @include goingLarge(1100) {
       padding-left: 40px;
+    }
+    .projects-container {
+      .project-item {
+        display: grid;
+        grid-template-columns: 80% 1fr;
+        padding-right: 20px;
+        margin-bottom: 50px;
+        .project-heading {
+          grid-column: span 2;
+        }
+        .thumb {
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        .project-links {
+          display: grid;
+          align-content: center;
+          a {
+            display: grid;
+            align-items: center;
+            margin: 20px 0;
+            // min-width: 150px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            background-color: #e4f0f7;
+            padding: 15px;
+            border-radius: 25px;
+            position: relative;
+            &:hover {
+              svg {
+                transform: rotate(180deg) scale(1.2);
+                right: -10px;
+              }
+            }
+            svg {
+              position: absolute;
+              width: 35px;
+              height: 35px;
+              fill: #fff;
+              background-color: rgba(39, 3, 183, 0.878);
+              box-shadow: -2px -1px 8px 1px rgba(65, 1, 123, 0.502);
+              right: 8px;
+              border-radius: 50%;
+              z-index: 1;
+              transform: rotate(180deg);
+              transition: all .3s;
+            }
+          }
+        }
+        .project-details {
+          grid-column: span 2;
+          p {
+            font-size: 1.5rem;
+          }
+        }
+      }
     }
   }
 }
