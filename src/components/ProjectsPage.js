@@ -2,6 +2,7 @@ import React from 'react';
 import Anime from 'react-anime';
 import CustomScroll from 'react-custom-scroll';
 import BackToHomeBtn from './BackToHomeBtn';
+import { BtnIcon } from './BackToHomeBtn';
 import '../styles/ProjectsPage.css';
 import '../styles/customScroll.css';
 import nest from '../assets/nest.png';
@@ -18,8 +19,8 @@ const ProjectsList = props => {
           <img src={project.thumb} alt="Project Preview"/>
         </div>
         <div className="project-links">
-          {project.links.live && <a href={project.links.live}>Live</a>}
-          {project.links.repo && <a href={project.links.repo}>Code on GitHub</a>}
+          {project.links.live && <a href={project.links.live}>Live<BtnIcon/></a>}
+          {project.links.repo && <a href={project.links.repo}>Code on GitHub<BtnIcon/></a>}
         </div>
         <div className="project-details">
           <p>{project.details}</p>
