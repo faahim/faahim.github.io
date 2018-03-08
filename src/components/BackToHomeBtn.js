@@ -3,7 +3,7 @@ import '../styles/BtnBack.css';
 import Anime from 'react-anime';
 // import btnIcon from '../assets/Btn.svg';
 
-const BtnIcon = props => {
+export const BtnIcon = props => {
   return(
     <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="none"/>
