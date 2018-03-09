@@ -6,6 +6,7 @@ import { BtnIcon } from './BackToHomeBtn';
 import '../styles/ProjectsPage.css';
 import '../styles/customScroll.css';
 import nest from '../assets/nest.png';
+import GlassEmoji from '../assets/GlassEmoji';
 
 const ProjectsList = props => {
   return(
@@ -19,8 +20,8 @@ const ProjectsList = props => {
           <img src={project.thumb} alt="Project Preview"/>
         </div>
         <div className="project-links">
-          {project.links.live && <a href={project.links.live}>Live<BtnIcon/></a>}
-          {project.links.repo && <a href={project.links.repo}>Code on GitHub<BtnIcon/></a>}
+          {project.links.live && <a className="link" href={project.links.live}>Live<BtnIcon/></a>}
+          {project.links.repo && <a className="link" href={project.links.repo}>Code on GitHub<BtnIcon/></a>}
         </div>
         <div className="project-details">
           <p>{project.details}</p>
@@ -60,7 +61,7 @@ const ProjectsPage = props => {
           <BackToHomeBtn handleClick={props.returnBtn}/>
           <CustomScroll heightRelativeToParent="calc(100% - 20px)">
             <div className="page-content">
-              <h1>Time to talk work!</h1>
+              <h1>Time to talk work! <GlassEmoji/></h1>
               <p>I like to try out new new tools and technoloogies to create apps/sites that somehow make my/someone else's life easier. Below are some of the projects that I loved working on. Also, I'm extremely greatful to the entire Open Source community for all the amazing stuffs that it provides us and makes it possible for everyone to create amazing things. I love contributing to Open Source whenever I can.</p>
               <div className="projects-container">
                 <ProjectsList projects={projects}/>
