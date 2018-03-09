@@ -2,11 +2,12 @@ import React from 'react';
 import Anime from 'react-anime';
 import CustomScroll from 'react-custom-scroll';
 import BackToHomeBtn from './BackToHomeBtn';
+import GlassEmoji from '../assets/GlassEmoji';
 import { BtnIcon } from './BackToHomeBtn';
 import '../styles/ProjectsPage.css';
 import '../styles/customScroll.css';
 import nest from '../assets/nest.png';
-import GlassEmoji from '../assets/GlassEmoji';
+import weatherApp from '../assets/weatherApp.png';
 
 const ProjectsList = props => {
   return(
@@ -14,7 +15,7 @@ const ProjectsList = props => {
       <div className="project-item" key={index}>
         <div className="project-heading">
           <h2>{project.name}</h2>
-          <h4>{project.heading}</h4>
+          <p>{project.heading}</p>
         </div>
         <div className="thumb">
           <img src={project.thumb} alt="Project Preview"/>
@@ -45,12 +46,12 @@ const ProjectsPage = props => {
     },
     {
       name: "Weather App",
-      heading: "I creared Weather App, An extension for Google Chrome that replaces the default New Tab page with a clean looking page that provide tools to help you stay productive.",
-      details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facilis fugit vitae quia maiores perspiciatis aliquam magni consequatur sapiente officia aspernatur deserunt, consectetur aliquid. Ullam illum ut beatae! Ipsa, perferendis!",
-      thumb: nest,
+      heading: "A weather app that you'll will actually want to look at. Also, it's cool because it gives you famous quotation based on weather. Very helpful, right? -_-",
+      details: "Its a web app that shows live weather information and forecast of your current location. You can also search for any location to see its weather info. I've used JavaScript and jQuery along with HTML and CSS to create it. The app is fully responsive. It uses Dark Skies API for fetching weather informations. It also utilizes Google Maps API for all the location related data. I've used Skycons, an amazing animated weather iconset made by DatkSkies, to present the weather data.",
+      thumb: weatherApp,
       links: {
-        live: null,
-        repo: null
+        live: "https://faahim.github.io/local-weather-viewer/",
+        repo: "https://github.com/faahim/local-weather-viewer"
       }
     }
   ]
