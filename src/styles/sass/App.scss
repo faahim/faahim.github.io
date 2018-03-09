@@ -88,9 +88,6 @@
                 transform: scale(25) rotate(125deg);
             }
             @include goingLarge(1000) {
-                transform: scale(30) rotate(125deg);
-            }
-            @include goingLarge(1600) {
                 transform: scale(35) rotate(125deg);
             }
         }

@@ -81,7 +81,4 @@
           transform: scale(25) rotate(125deg); } }
       @media (min-width: 62.5em) {
         .App svg.expand {
-          transform: scale(30) rotate(125deg); } }
-      @media (min-width: 100em) {
-        .App svg.expand {
           transform: scale(35) rotate(125deg); } }
