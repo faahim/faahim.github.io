@@ -68,9 +68,12 @@
           }
         }
         .thumb {
+          display: grid;
+          justify-items: center;
           img {
             max-width: 100%;
             height: auto;
+            margin: 0 auto;
           }
         }
         .project-links {
