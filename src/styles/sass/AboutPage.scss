@@ -37,10 +37,7 @@
       padding-left: 40px;
     }
     h1 {
-      font-size: 2rem;
-      @include goingLarge(1000) {
-        font-size: 2.5rem;
-      }
+      @include heading-style;
     }
     h3 {
       font-size: 1.8rem;
@@ -50,7 +47,6 @@
     }
     p {
       font-size: 1.3rem;
-      font-weight: 500;
       @include goingLarge(600) {
         font-size: 1.8rem;
       }

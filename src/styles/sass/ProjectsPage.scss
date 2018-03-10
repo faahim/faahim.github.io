@@ -36,7 +36,7 @@
     }
     p {
       font-weight: 500;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
     .projects-container {
       padding-top: 50px;
@@ -54,10 +54,11 @@
         }
         .project-heading {
           h2 {
+            font-size: 1.8rem;
             &::before{
               content: "";
               display: inline-block;
-              vertical-align: bottom;
+              vertical-align: top;
               margin-right: 10px;
               width: 5px;
               height: 30px;
@@ -70,6 +71,7 @@
         .thumb {
           display: grid;
           justify-items: center;
+          margin-bottom: 20px;
           img {
             max-width: 100%;
             height: auto;
@@ -86,7 +88,7 @@
         .project-details {
           padding-bottom: 20px;
           p {
-            font-size: 1.2rem;
+            font-weight: 300;
           }
         }
       }
