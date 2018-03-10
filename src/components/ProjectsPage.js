@@ -6,12 +6,6 @@ import GlassEmoji from '../assets/GlassEmoji';
 import { BtnIcon } from './BackToHomeBtn';
 import '../styles/ProjectsPage.css';
 import '../styles/customScroll.css';
-import nest from '../assets/nest.png';
-import weatherApp from '../assets/weatherApp.png';
-import wikipediaViewer from '../assets/wikipediaViewer.png';
-import tributePage from '../assets/tributePage.png';
-import randomQuote from '../assets/randomQuote.png';
-import twichCoder from '../assets/twichCoder.png';
 
 const ProjectsList = props => {
   return(
