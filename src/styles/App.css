@@ -6,8 +6,10 @@
   padding: 0 20px;
   position: relative;
   font-family: 'museo-sans', sans-serif;
-  line-height: 35px;
   font-weight: 300; }
+  @media (min-width: 62.5em) {
+    .App {
+      line-height: 35px; } }
   .App.single-card > svg {
     opacity: 0;
     transform: scale(0) rotate(125deg); }

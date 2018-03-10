@@ -35,8 +35,11 @@
       }
     }
     p {
-      font-weight: 500;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      @include goingLarge(800) {
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
     }
     .projects-container {
       padding-top: 50px;
