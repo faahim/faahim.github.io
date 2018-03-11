@@ -6,7 +6,8 @@
   padding: 0 20px;
   position: relative;
   font-family: 'museo-sans', sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  letter-spacing: 2.6; }
   @media (min-width: 62.5em) {
     .App {
       line-height: 35px; } }

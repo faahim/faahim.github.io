@@ -9,6 +9,7 @@
     position: relative;
     font-family: 'museo-sans', sans-serif;
     font-weight: 300;
+    letter-spacing: 2.6;
     @include goingLarge(1000) {
         line-height: 35px;
     }
