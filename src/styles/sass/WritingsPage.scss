@@ -1,18 +1,60 @@
 @import "./shared.scss";
 
 .writings-page {
+  height: 100vh;
   color: #fff;
   padding: 60px 0;
+  position: relative;
   @include goingLarge(1000) {
-    padding: 100px;
+    padding: 80px 180px 100px 100px;
   }
   @include goingLarge(1400) {
-    padding: 150px 200px;
+    padding: 100px 500px 100px 200px;
+  }
+  p.page-tag {
+    @include page-tag;
   }
   .page-content {
-    padding-left: 20px;
+    padding: 0 20px;
+    height: 100%;
+    position: relative;
     @include goingLarge(1100) {
       padding-left: 40px;
+    }
+    h1 {
+      @include heading-style;
+    }
+    p {
+      font-size: 1.2rem;
+      @include goingLarge(800) {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+    .article-list {
+      ul {
+        padding-left: 0;
+        li {
+          list-style-type: none;
+          position: relative;
+          margin-bottom: 30px;
+          a {
+            @include link-style;
+            line-height: 35px;
+            font-size: 2rem !important;
+            margin: 0;
+          }
+          span {
+            position: relative;
+            padding: 2px 5px;
+            // border-radius: 3px;
+            left: 20px;
+            color: #fff;
+            background-color: rgb(0, 163, 98);
+            font-size: .9rem;
+          }
+        }
+      }
     }
   }
 }
