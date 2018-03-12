@@ -88,11 +88,15 @@
           }
         }
         .project-links {
-          width: 50%;
-          margin: 0 auto;
           text-align: center;
           a {
             @include link-style;
+            font-weight: 700;
+            margin: 0 5px;
+            @include goingLarge(800) {
+              font-size: 1.5rem;
+              font-weight: 500;
+            }
           }
         }
         .project-details {
