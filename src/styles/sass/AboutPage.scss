@@ -12,22 +12,7 @@
     padding: 100px 500px 100px 200px;
   }
   p.page-tag {
-    display: none;
-    text-shadow: 2px 6px 10px #bd26e2;
-    @include goingLarge(1000) {
-      display: block;
-      font-size: 5rem;
-      transform: rotate(-90deg);
-      position: fixed;
-      top: 40%;
-      // left: -150px;
-      font-weight: 700;
-      opacity: 0.1;
-    }
-    @include goingLarge(1400) {
-      font-size: 6rem;
-      // left: -100px;
-    }
+    @include page-tag;
   }
   .page-content {
     position: relative;
