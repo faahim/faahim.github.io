@@ -39,6 +39,9 @@
     }
     p {
       font-size: 1.2rem;
+      &.page-intro {
+        padding-right: 20px;
+      }
       @include goingLarge(800) {
         font-weight: 500;
         font-size: 1.5rem;

@@ -104,7 +104,7 @@ const ProjectsPage = props => {
           <CustomScroll heightRelativeToParent="calc(100% - 20px)">
             <div className="page-content">
               <h1>Time to talk work! <GlassEmoji/></h1>
-              <p>I like to try out new new tools and technoloogies to create apps/sites that somehow make my/someone else's life easier. Below are some of the projects that I loved working on. Also, I'm extremely greatful to the entire Open Source community for all the amazing stuffs that it provides us and makes it possible for everyone to create amazing things. I love contributing to Open Source whenever I can.</p>
+              <p className="page-intro">I like to try out new new tools and technoloogies to create apps/sites that somehow make my/someone else's life easier. Below are some of the projects that I loved working on. Also, I'm extremely greatful to the entire Open Source community for all the amazing stuffs that it provides us and makes it possible for everyone to create amazing things. I love contributing to Open Source whenever I can.</p>
               <div className="projects-container">
                 <ProjectsList projects={projects}/>
               </div>
