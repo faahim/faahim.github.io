@@ -11,6 +11,9 @@
   @include goingLarge(1400) {
     padding: 100px 200px 60px;
   }
+  p.page-tag {
+    @include page-tag;
+  }
   .page-content {
     position: relative;
     height: 100%;
