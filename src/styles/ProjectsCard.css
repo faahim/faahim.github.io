@@ -1,2 +1,8 @@
+button:active, button:focus, a:active, a:focus {
+  outline: none; }
+
 .projects-card {
-  background-color: #F7E1E180; }
+  background-color: rgba(247, 225, 225, 0.7); }
+  @media (min-width: 50em) {
+    .projects-card {
+      background-color: rgba(247, 225, 225, 0.5); } }

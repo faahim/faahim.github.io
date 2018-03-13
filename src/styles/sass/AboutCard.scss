@@ -1,3 +1,8 @@
+@import "./shared.scss";
+
 .about-card {
-  background-color: #ededed80;
+  background-color: rgba(237, 237, 237, 0.7);
+  @include goingLarge(800) {
+    background-color: rgba(237, 237, 237, 0.5);
+  }
 }

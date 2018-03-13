@@ -1,2 +1,8 @@
+button:active, button:focus, a:active, a:focus {
+  outline: none; }
+
 .about-card {
-  background-color: #ededed80; }
+  background-color: rgba(237, 237, 237, 0.7); }
+  @media (min-width: 50em) {
+    .about-card {
+      background-color: rgba(237, 237, 237, 0.5); } }
