@@ -100,6 +100,9 @@ const WritingsPage = props => {
     <Anime easing="easeOutCubic" opacity={[0, 1]} translateY={-30} duration={400} delay={300}>
       <div className="writings-page">
           <BackToHomeBtn handleClick={props.returnBtn}/>
+          <Anime easing="easeOutCubic" left={[-350, -120]} duration={500} delay={800}>
+            <p className="page-tag">Writings</p>
+          </Anime>
           <CustomScroll heightRelativeToParent="calc(100% - 20px)">
             <div className="page-content">
               <h1>I love to write about my experiences!</h1>

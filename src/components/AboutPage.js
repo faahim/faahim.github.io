@@ -11,7 +11,7 @@ const AboutPage = props => {
       <div className="about-page">
           <BackToHomeBtn handleClick={props.returnBtn}/>
           <Anime easing="easeOutCubic" left={[-350, -150]} duration={500} delay={800}>
-            <p className="page-tag">About Me.</p>
+            <p className="page-tag">About Me</p>
           </Anime>
           <CustomScroll heightRelativeToParent="calc(100% - 20px)">
             <div className="page-content">
