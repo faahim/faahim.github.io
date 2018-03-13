@@ -1,3 +1,6 @@
+button:active, button:focus, a:active, a:focus {
+  outline: none; }
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -12,9 +15,13 @@
     align-content: center;
     justify-content: center;
     padding: 10px;
-    box-shadow: 1px 2px 8px 1px #f9b4f033;
+    box-shadow: 1px 2px 8px 1px rgba(249, 180, 240, 0.2);
     border-radius: 5px;
     position: relative;
     cursor: pointer; }
     .card-container .card h2 {
-      margin: 0; }
+      margin: 0;
+      font-size: 1.2rem; }
+      @media (min-width: 37.5em) {
+        .card-container .card h2 {
+          font-size: 1.5rem; } }
