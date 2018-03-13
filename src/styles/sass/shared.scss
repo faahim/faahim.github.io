@@ -13,6 +13,7 @@ button:active, button:focus, a:active, a:focus {
   font-size: 2rem;
   @include goingLarge(600) {
     font-size: 2.8rem;
+    line-height: 40px;
   }
 }
 
