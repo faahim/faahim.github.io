@@ -92,7 +92,7 @@
           a {
             @include link-style;
             font-weight: 700;
-            margin: 0 5px;
+            margin: 5px;
             @include goingLarge(800) {
               font-size: 1.5rem;
               font-weight: 500;
