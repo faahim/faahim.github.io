@@ -1,18 +1,35 @@
 @import "./shared.scss";
 
 .contacts-page {
+  height: 100vh;
   color: #fff;
   padding: 60px 0;
+  position: relative;
   @include goingLarge(1000) {
-    padding: 100px;
+    padding: 80px 180px 100px 100px;
   }
   @include goingLarge(1400) {
-    padding: 150px 200px;
+    padding: 100px 500px 100px 200px;
+  }
+  p.page-tag {
+    @include page-tag;
   }
   .page-content {
-    padding-left: 20px;
+    padding: 0 20px;
+    height: 100%;
+    position: relative;
     @include goingLarge(1100) {
       padding-left: 40px;
+    }
+    h1 {
+      @include heading-style;
+    }
+    p {
+      font-size: 1.2rem;
+      @include goingLarge(800) {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
     }
   }
 }
