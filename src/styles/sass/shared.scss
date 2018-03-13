@@ -3,6 +3,11 @@
   @media (min-width: $width/16+em) { @content; }
 }
 
+//Remove outline from button and link when in focus or active
+button:active, button:focus, a:active, a:focus {
+  outline: none;
+}
+
 //Heading Typography
 @mixin heading-style {
   font-size: 2rem;

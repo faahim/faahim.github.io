@@ -1,3 +1,6 @@
+button:active, button:focus, a:active, a:focus {
+  outline: none; }
+
 .App {
   display: grid;
   min-height: 100vh;
