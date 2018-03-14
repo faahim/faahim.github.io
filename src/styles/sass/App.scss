@@ -17,11 +17,20 @@
             opacity: 0;
             transform: scale(0) rotate(125deg);
     }
+    &.float {
+        & > svg {
+            transition: all 10s;
+            transform: translateX(20px) translateY(30px) rotate(50deg);
+        }
+    }
     svg {
         position: fixed;
         // animation: float 10s infinite;
         z-index: -1;
         transition: all 1s;
+        &.float {
+            animation: float 10s infinite;
+        }
         &.about-svg {
             top: 95px;
             right: 20px;
@@ -96,5 +105,11 @@
                 transform: scale(35) rotate(125deg);
             }
         }
+    }
+}
+
+@keyframes float {
+    50% {
+        transform: translateX(200px) translateY(200px);
     }
 }

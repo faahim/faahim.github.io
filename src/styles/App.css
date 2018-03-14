@@ -17,10 +17,15 @@ button:active, button:focus, a:active, a:focus {
   .App.single-card > svg {
     opacity: 0;
     transform: scale(0) rotate(125deg); }
+  .App.float > svg {
+    transition: all 10s;
+    transform: translateX(20px) translateY(30px) rotate(50deg); }
   .App svg {
     position: fixed;
     z-index: -1;
     transition: all 1s; }
+    .App svg.float {
+      animation: float 10s infinite; }
     .App svg.about-svg {
       top: 95px;
       right: 20px; }
@@ -90,3 +95,7 @@ button:active, button:focus, a:active, a:focus {
       @media (min-width: 62.5em) {
         .App svg.expand {
           transform: scale(35) rotate(125deg); } }
+
+@keyframes float {
+  50% {
+    transform: translateX(200px) translateY(200px); } }
