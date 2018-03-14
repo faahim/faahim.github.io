@@ -25,7 +25,9 @@ class App extends Component {
       cardSelected: true,
       choosenCard: param
     }, () => {
-      const cardSvg = document.getElementsByClassName(this.state.choosenCard+"-svg")[0];
+      const hovered = document.querySelector(".hovered");
+      if(hovered) {hovered.classList.remove("hovered")};
+      const cardSvg = document.getElementsByClassName(param+"-svg")[0];
       cardSvg.classList.add("expand");
     });
   }
@@ -37,16 +39,7 @@ class App extends Component {
     }, () => {
       const expandedSvg = document.getElementsByClassName("expand")[0];
       expandedSvg.classList.remove("expand");
-      setTimeout(() => {
-        document.querySelector(".App").classList.add("float");
-      }, 1000);
     })
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      document.querySelector(".App").classList.add("float");
-    }, 1000);
   }
 
   render() {
