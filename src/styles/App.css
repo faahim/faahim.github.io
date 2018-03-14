@@ -17,18 +17,15 @@ button:active, button:focus, a:active, a:focus {
   .App.single-card > svg {
     opacity: 0;
     transform: scale(0) rotate(125deg); }
-  .App.float > svg {
-    transition: all 10s;
-    transform: translateX(20px) translateY(30px) rotate(50deg); }
   .App svg {
     position: fixed;
     z-index: -1;
-    transition: all 1s; }
-    .App svg.float {
-      animation: float 10s infinite; }
+    transition: all 1s ease-out; }
     .App svg.about-svg {
       top: 95px;
       right: 20px; }
+      .App svg.about-svg.hovered {
+        transform: translateX(40px) translateY(-40px) scale(1.2) rotate(35deg); }
       @media (min-width: 68.75em) {
         .App svg.about-svg {
           top: 75px;
@@ -44,6 +41,8 @@ button:active, button:focus, a:active, a:focus {
     .App svg.projects-svg {
       bottom: 75px;
       left: 25px; }
+      .App svg.projects-svg.hovered {
+        transform: translateX(-40px) translateY(-40px) scale(1.2) rotate(-25deg); }
       @media (min-width: 68.75em) {
         .App svg.projects-svg {
           bottom: 50px;
@@ -59,6 +58,8 @@ button:active, button:focus, a:active, a:focus {
     .App svg.writings-svg {
       bottom: 20px;
       right: 20px; }
+      .App svg.writings-svg.hovered {
+        transform: translateX(30px) translateY(-20px) scale(1.2) rotate(55deg); }
       @media (min-width: 68.75em) {
         .App svg.writings-svg {
           bottom: 120px;
@@ -74,6 +75,8 @@ button:active, button:focus, a:active, a:focus {
     .App svg.contact-svg {
       top: 30px;
       left: 40px; }
+      .App svg.contact-svg.hovered {
+        transform: translateX(-20px) translateY(30px) scale(1.2) rotate(-35deg); }
       @media (min-width: 68.75em) {
         .App svg.contact-svg {
           top: 80px;
@@ -94,8 +97,4 @@ button:active, button:focus, a:active, a:focus {
           transform: scale(25) rotate(125deg); } }
       @media (min-width: 62.5em) {
         .App svg.expand {
-          transform: scale(35) rotate(125deg); } }
-
-@keyframes float {
-  50% {
-    transform: translateX(200px) translateY(200px); } }
+          transform: scale(38) rotate(125deg); } }

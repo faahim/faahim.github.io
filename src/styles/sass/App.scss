@@ -17,23 +17,17 @@
             opacity: 0;
             transform: scale(0) rotate(125deg);
     }
-    &.float {
-        & > svg {
-            transition: all 10s;
-            transform: translateX(20px) translateY(30px) rotate(50deg);
-        }
-    }
     svg {
         position: fixed;
         // animation: float 10s infinite;
         z-index: -1;
-        transition: all 1s;
-        &.float {
-            animation: float 10s infinite;
-        }
+        transition: all 1s ease-out;
         &.about-svg {
             top: 95px;
             right: 20px;
+            &.hovered {
+                transform: translateX(40px) translateY(-40px) scale(1.2) rotate(35deg);
+            }
             @include goingLarge(1100) {
                 top: 75px;
                 right: 250px;
@@ -50,6 +44,9 @@
         &.projects-svg {
             bottom: 75px;
             left: 25px;
+            &.hovered {
+                transform: translateX(-40px) translateY(-40px) scale(1.2) rotate(-25deg);
+            }
             @include goingLarge(1100) {
                 bottom: 50px;
                 left: 195px;
@@ -66,6 +63,9 @@
         &.writings-svg {
             bottom: 20px;
             right: 20px;
+            &.hovered {
+                transform: translateX(30px) translateY(-20px) scale(1.2) rotate(55deg);
+            }
             @include goingLarge(1100) {
                 bottom: 120px;
                 right: 120px;
@@ -82,6 +82,9 @@
         &.contact-svg {
             top: 30px;
             left: 40px;
+            &.hovered {
+                transform: translateX(-20px) translateY(30px) scale(1.2) rotate(-35deg);
+            }
             @include goingLarge(1100) {
                 top: 80px;
                 left: 100px;
@@ -102,14 +105,8 @@
                 transform: scale(25) rotate(125deg);
             }
             @include goingLarge(1000) {
-                transform: scale(35) rotate(125deg);
+                transform: scale(38) rotate(125deg);
             }
         }
-    }
-}
-
-@keyframes float {
-    50% {
-        transform: translateX(200px) translateY(200px);
     }
 }
