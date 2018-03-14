@@ -6,8 +6,15 @@ import ContactsCard from '../components/ContactsCard';
 import '../styles/CardContainer.css';
 
 class CardContainer extends Component {
-  constructor(props) {
-    super(props);
+
+  mouseEnter = param => event => {
+    const hoverTarget = document.querySelector(`.${param}-svg`);
+    if (hoverTarget) {hoverTarget.classList.add("hovered")};
+  }
+
+  mouseLeave = param => event => {
+    const unHoverTarget = document.querySelector(".hovered");
+    if (unHoverTarget) {unHoverTarget.classList.remove("hovered")};
   }
 
   render() {
@@ -16,10 +23,10 @@ class CardContainer extends Component {
 
     return(
       <div className="card-container">
-        <AboutCard onClick={clickHandler} scaleArr={scaleArr}/>
-        <ProjectsCard onClick={clickHandler} scaleArr={scaleArr}/>
-        <WritingsCard onClick={clickHandler} scaleArr={scaleArr}/>
-        <ContactsCard onClick={clickHandler} scaleArr={scaleArr}/>
+        <AboutCard onClick={clickHandler} MouseEnter={this.mouseEnter} MouseLeave={this.mouseLeave} scaleArr={scaleArr}/>
+        <ProjectsCard onClick={clickHandler} MouseEnter={this.mouseEnter} MouseLeave={this.mouseLeave} scaleArr={scaleArr}/>
+        <WritingsCard onClick={clickHandler} MouseEnter={this.mouseEnter} MouseLeave={this.mouseLeave} scaleArr={scaleArr}/>
+        <ContactsCard onClick={clickHandler} MouseEnter={this.mouseEnter} MouseLeave={this.mouseLeave} scaleArr={scaleArr}/>
       </div>
     )
   }
