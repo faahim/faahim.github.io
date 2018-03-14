@@ -8,8 +8,8 @@
   @include goingLarge(1000) {
     padding: 80px 180px 100px 100px;
   }
-  @include goingLarge(1400) {
-    padding: 100px 500px 100px 200px;
+  @include goingLarge(1600) {
+    padding: 100px 300px 100px 200px;
   }
   p.page-tag {
     @include page-tag;
