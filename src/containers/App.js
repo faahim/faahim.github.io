@@ -37,7 +37,16 @@ class App extends Component {
     }, () => {
       const expandedSvg = document.getElementsByClassName("expand")[0];
       expandedSvg.classList.remove("expand");
+      setTimeout(() => {
+        document.querySelector(".App").classList.add("float");
+      }, 1000);
     })
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      document.querySelector(".App").classList.add("float");
+    }, 1000);
   }
 
   render() {
