@@ -21,12 +21,16 @@
         position: fixed;
         // animation: float 10s infinite;
         z-index: -1;
-        transition: all 1s ease-out;
+        transition: all 1s;
         &.about-svg {
             top: 95px;
             right: 20px;
-            &.hovered {
-                transform: translateX(40px) translateY(-40px) scale(1.2) rotate(35deg);
+            // transition: all .5s;
+            @include goingLarge(800) {
+                &.hovered {
+                    width: 140px;
+                    height: 140px;
+                }
             }
             @include goingLarge(1100) {
                 top: 75px;
@@ -44,8 +48,11 @@
         &.projects-svg {
             bottom: 75px;
             left: 25px;
-            &.hovered {
-                transform: translateX(-40px) translateY(-40px) scale(1.2) rotate(-25deg);
+            @include goingLarge(800) {
+                &.hovered {
+                    width: 165px;
+                    height: 165px;
+                }
             }
             @include goingLarge(1100) {
                 bottom: 50px;
@@ -63,8 +70,11 @@
         &.writings-svg {
             bottom: 20px;
             right: 20px;
-            &.hovered {
-                transform: translateX(30px) translateY(-20px) scale(1.2) rotate(55deg);
+            @include goingLarge(800) {
+                &.hovered {
+                    width: 170px;
+                    height: 170px;
+                }
             }
             @include goingLarge(1100) {
                 bottom: 120px;
@@ -82,8 +92,11 @@
         &.contact-svg {
             top: 30px;
             left: 40px;
-            &.hovered {
-                transform: translateX(-20px) translateY(30px) scale(1.2) rotate(-35deg);
+            @include goingLarge(800) {
+                &.hovered {
+                    width: 190px;
+                    height: 190px;
+                }
             }
             @include goingLarge(1100) {
                 top: 80px;

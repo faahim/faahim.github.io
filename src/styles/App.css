@@ -20,12 +20,14 @@ button:active, button:focus, a:active, a:focus {
   .App svg {
     position: fixed;
     z-index: -1;
-    transition: all 1s ease-out; }
+    transition: all 1s; }
     .App svg.about-svg {
       top: 95px;
       right: 20px; }
-      .App svg.about-svg.hovered {
-        transform: translateX(40px) translateY(-40px) scale(1.2) rotate(35deg); }
+      @media (min-width: 50em) {
+        .App svg.about-svg.hovered {
+          width: 140px;
+          height: 140px; } }
       @media (min-width: 68.75em) {
         .App svg.about-svg {
           top: 75px;
@@ -41,8 +43,10 @@ button:active, button:focus, a:active, a:focus {
     .App svg.projects-svg {
       bottom: 75px;
       left: 25px; }
-      .App svg.projects-svg.hovered {
-        transform: translateX(-40px) translateY(-40px) scale(1.2) rotate(-25deg); }
+      @media (min-width: 50em) {
+        .App svg.projects-svg.hovered {
+          width: 165px;
+          height: 165px; } }
       @media (min-width: 68.75em) {
         .App svg.projects-svg {
           bottom: 50px;
@@ -58,8 +62,10 @@ button:active, button:focus, a:active, a:focus {
     .App svg.writings-svg {
       bottom: 20px;
       right: 20px; }
-      .App svg.writings-svg.hovered {
-        transform: translateX(30px) translateY(-20px) scale(1.2) rotate(55deg); }
+      @media (min-width: 50em) {
+        .App svg.writings-svg.hovered {
+          width: 170px;
+          height: 170px; } }
       @media (min-width: 68.75em) {
         .App svg.writings-svg {
           bottom: 120px;
@@ -75,8 +81,10 @@ button:active, button:focus, a:active, a:focus {
     .App svg.contact-svg {
       top: 30px;
       left: 40px; }
-      .App svg.contact-svg.hovered {
-        transform: translateX(-20px) translateY(30px) scale(1.2) rotate(-35deg); }
+      @media (min-width: 50em) {
+        .App svg.contact-svg.hovered {
+          width: 190px;
+          height: 190px; } }
       @media (min-width: 68.75em) {
         .App svg.contact-svg {
           top: 80px;
