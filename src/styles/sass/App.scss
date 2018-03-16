@@ -113,10 +113,7 @@
         }
         &.expand {
             opacity: 1;
-            transform: scale(15) rotate(125deg);
-            @include goingLarge(600) {
-                transform: scale(25) rotate(125deg);
-            }
+            transform: scale(25) rotate(125deg);
             @include goingLarge(1000) {
                 transform: scale(38) rotate(125deg);
             }

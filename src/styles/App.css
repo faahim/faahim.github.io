@@ -99,10 +99,7 @@ button:active, button:focus, a:active, a:focus {
           left: 350px; } }
     .App svg.expand {
       opacity: 1;
-      transform: scale(15) rotate(125deg); }
-      @media (min-width: 37.5em) {
-        .App svg.expand {
-          transform: scale(25) rotate(125deg); } }
+      transform: scale(25) rotate(125deg); }
       @media (min-width: 62.5em) {
         .App svg.expand {
           transform: scale(38) rotate(125deg); } }
