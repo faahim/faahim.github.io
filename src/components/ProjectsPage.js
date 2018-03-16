@@ -19,8 +19,8 @@ const ProjectsList = props => {
           <img src={project.thumb} alt="Project Preview"/>
         </div>
         <div className="project-links">
-          {project.links.live && <a className="link" href={project.links.live}>Live Demo</a>}
-          {project.links.repo && <a className="link" href={project.links.repo}>Code on GitHub</a>}
+          {project.links.live && <a className="link" target="_blank" href={project.links.live}>Live Demo</a>}
+          {project.links.repo && <a className="link" target="_blank" href={project.links.repo}>Code on GitHub</a>}
         </div>
         <div className="project-details">
           <p>{project.details}</p>
