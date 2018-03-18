@@ -21,8 +21,8 @@ export const projectsData = [
   },
   {
     name: "Tribute Page",
-    heading: "I had to pick someone to make a tribute page on, for the freeCodeCamp curriculmn. I picked Quincy Larson.",
-    details: "Quincy Larson, who prefers to describe himself just as a teacher, is also the founder of freeCodeCamp. freeCodeCamp is a non-profit organization where anyone can learn to code for completely free of charge. Quincy is an inspiring name in the industry. Personally, he is one of the most inspiring people I've even seen in my life. Not only for his amazing contribution to the society, but also for his astonishing way of living.",
+    heading: "I had to pick someone to make a tribute page on, for the freeCodeCamp curriculum. I picked Quincy Larson.",
+    details: "Quincy Larson, who prefers to describe himself just as a teacher, is also the founder of freeCodeCamp. freeCodeCamp is a non-profit organization where anyone can learn to code for completely free of charge. Quincy is an inspiring name in the industry. Personally, he is one of the most inspiring people I've ever seen in my life. Not only for his amazing contribution to the society, but also for his astonishing way of living.",
     thumb: "http://res.cloudinary.com/dzuqw67ww/image/upload/v1520693932/tributePage_fubijo.png",
     links: {
       live: "https://faahim.github.io/tribute-page/",
@@ -31,8 +31,8 @@ export const projectsData = [
   },
   {
     name: "Twitch Coder",
-    heading: "I enjoy code streaming. There's a lot of great channel that streams live coding on Twich. But I found that it was hard to find coding channel that is good and active. So I gathered some of the best channels and gathered them here.",
-    details: "This app is a directory to find some of the best code streaming channel on twitch.tv. It shows you a the list of different channels along with live meta information like weather they are streaming right now, what they are steaming etc. You can also look up for any channel on Twitch using the Search UI. This app was made using JavaScript, HTML and CSS. It uses the twitch.tv API to fetch channel information.",
+    heading: "I enjoy code streaming. There's a lot of great channels that streams live coding on Twitch. But I found that it was hard to find coding channels that are both good and active. So I looked up for some of the best channels and gathered them here.",
+    details: "This app is a directory to find some of the best code streaming channel on twitch.tv. It shows you a list of different channels along with live meta information like whether they are streaming right now, what they are steaming etc. You can also look up for any channel on Twitch using the Search UI. This app was made using JavaScript, HTML, and CSS. It uses the twitch.tv API to fetch channel information.",
     thumb: "http://res.cloudinary.com/dzuqw67ww/image/upload/v1520693928/twichCoder_ea9rdb.png",
     links: {
       live: "https://faahim.github.io/twitch-coders/",
@@ -52,7 +52,7 @@ export const projectsData = [
   {
     name: "Wikipedia Viewer",
     heading: "Ever felt like the Wikipedia page could look a little nicer? I did.",
-    details: "An small JavaScript based app that fetches results for any given strings from Wikipedia through the Wikipedia API and shows the results back on the page. This project was done as a part of the freeCodeCamp learning curriculum. It's built using HTML, CSS (SASS) and JavaScript (jQury).",
+    details: "A small JavaScript-based app that fetches results for any given strings from Wikipedia through the Wikipedia API and shows the results back on the page. This project was done as a part of the freeCodeCamp learning curriculum. It's built using HTML, CSS (SASS) and JavaScript (jQuery).",
     thumb: "http://res.cloudinary.com/dzuqw67ww/image/upload/v1520693927/wikipediaViewer_qtqnlp.png",
     links: {
       live: "https://faahim.github.io/wikipedia-viewer/",
