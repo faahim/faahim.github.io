@@ -30,7 +30,8 @@ const WritingsPage = props => {
           <CustomScroll heightRelativeToParent="calc(100% - 20px)">
             <div className="page-content">
               <h1>I love to write about my experiences!</h1>
-              <p className="page-intro">One of the reason behind loving the development cummunity so much is peoples mindset for giving away valueabe resources and inshights for free. I've read and benifitted from countless number of articles online. Writting articles about technology and experience is my way of giving back to the community. As a bonus, it's also a great way for solidifying my own learning. <br/>
+              <p className="page-intro">One of the reasons behind loving the development community so much is peoples mindset for giving away valuable resources and insights for free. I've read and benefitted from countless numbers of articles online. Writing articles about technology and experience is my way of giving back to the community. As a bonus, it's also a great way to solidifying my own learning. 
+                <br/>
               Below are some of the articles I've written recently.</p>
               <div className="article-list">
                 <ArticleList articleList={writingsData}/>

@@ -22,7 +22,7 @@ const ContactsPage = props => {
           </Anime>
           <div className="page-content">
             <h1>Let's get in touch!</h1>
-            <p>I love meeting new people from around the world! Hit me up to talk about project ideas, Programming, JavaScript, Linux, Kittens and Puppys, Travelling, Books, Or Weather. Or just say "Hi" and we'll find something we enjoy talking about. You can find me through any of these platform you prefer.</p>
+            <p>I love meeting new people from around the world! Hit me up to talk about project ideas, Programming, JavaScript, Linux, Kittens and Puppies, Travelling, Books, Or Weather. Or just say "Hi" and we'll find something we enjoy talking about. You can find me through any of the platform listed below.</p>
             <div className="link-list">
               <ul>
                 <li><a href="mailto:afiur.fahim@gmail.com" target="_blank"><img src={mail} alt="Mail me!"/></a></li>
