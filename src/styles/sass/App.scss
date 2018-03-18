@@ -17,16 +17,28 @@
             opacity: 0;
             transform: scale(0) rotate(125deg);
     }
-    svg {
+    & > svg {
         position: fixed;
         // animation: float 10s infinite;
         z-index: -1;
         transition: all 1s;
+        width: 50px;
+        @include goingLarge(350)  {
+            width: 80px;
+        }
+        @include goingLarge(550) {
+            width: 100px;
+        }
+        @include goingLarge(700) {
+            width: 150px;
+        }
         &.about-svg {
-            top: 95px;
-            right: 20px;
+            top: 2px;
+            right: 80px;
             // transition: all .5s;
-            @include goingLarge(800) {
+            @include goingLarge(700) {
+                top: 95px;
+                right: 20px;
                 &.hovered {
                     width: 140px;
                     height: 140px;
@@ -46,9 +58,11 @@
             }
         }
         &.projects-svg {
-            bottom: 75px;
+            bottom: 5px;
             left: 25px;
-            @include goingLarge(800) {
+            @include goingLarge(700) {
+                bottom: 75px;
+                left: 25px;
                 &.hovered {
                     width: 165px;
                     height: 165px;
@@ -68,9 +82,11 @@
             }
         }
         &.writings-svg {
-            bottom: 20px;
-            right: 20px;
-            @include goingLarge(800) {
+            bottom: 30px;
+            right: 30px;
+            @include goingLarge(700) {
+                bottom: 20px;
+                right: 20px;
                 &.hovered {
                     width: 170px;
                     height: 170px;
@@ -90,9 +106,11 @@
             }
         }
         &.contact-svg {
-            top: 30px;
-            left: 40px;
-            @include goingLarge(800) {
+            top: 5px;
+            left: 60px;
+            @include goingLarge(700) {
+                top: 30px;
+                left: 40px;
                 &.hovered {
                     width: 190px;
                     height: 190px;
@@ -113,10 +131,10 @@
         }
         &.expand {
             opacity: 1;
-            transform: scale(25) rotate(125deg);
-            @include goingLarge(1000) {
-                transform: scale(38) rotate(125deg);
-            }
+            transform: scale(38) rotate(125deg);
+            // @include goingLarge(1000) {
+            //     transform: scale(38) rotate(125deg);
+            // }
         }
     }
 }
