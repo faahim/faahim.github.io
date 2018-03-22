@@ -21,10 +21,10 @@ button:active, button:focus, a:active, a:focus {
     position: fixed;
     z-index: -1;
     transition: all 1s;
-    width: 50px; }
+    width: 65px; }
     @media (min-width: 21.875em) {
       .App > svg {
-        width: 80px; } }
+        width: 90px; } }
     @media (min-width: 34.375em) {
       .App > svg {
         width: 100px; } }
@@ -32,93 +32,99 @@ button:active, button:focus, a:active, a:focus {
       .App > svg {
         width: 150px; } }
     .App > svg.about-svg {
-      top: 2px;
-      right: 80px; }
+      top: 30px;
+      left: 20px; }
       @media (min-width: 43.75em) {
         .App > svg.about-svg {
           top: 95px;
-          right: 20px; }
+          left: 20px; }
           .App > svg.about-svg.hovered {
             width: 140px;
             height: 140px; } }
       @media (min-width: 68.75em) {
         .App > svg.about-svg {
           top: 75px;
-          right: 250px; } }
+          left: 220px; } }
       @media (min-width: 90em) {
         .App > svg.about-svg {
-          top: 165px;
-          right: 350px; } }
+          top: 100px;
+          left: 280px; } }
       @media (min-width: 120em) {
         .App > svg.about-svg {
           top: 225px;
-          right: 460px; } }
+          left: 380px; } }
     .App > svg.projects-svg {
-      bottom: 5px;
-      left: 25px; }
+      top: 2px;
+      right: 15px; }
       @media (min-width: 43.75em) {
         .App > svg.projects-svg {
-          bottom: 75px;
-          left: 25px; }
+          top: 25px;
+          right: 45px; }
           .App > svg.projects-svg.hovered {
             width: 165px;
             height: 165px; } }
       @media (min-width: 68.75em) {
         .App > svg.projects-svg {
-          bottom: 50px;
-          left: 195px; } }
+          top: 50px;
+          right: 100px; } }
       @media (min-width: 90em) {
         .App > svg.projects-svg {
-          bottom: 175px;
-          left: 255px; } }
+          top: 175px;
+          right: 185px; } }
       @media (min-width: 120em) {
         .App > svg.projects-svg {
-          bottom: 255px;
-          left: 495px; } }
+          top: 155px;
+          right: 355px; } }
     .App > svg.writings-svg {
-      bottom: 30px;
-      right: 30px; }
+      bottom: 5px;
+      left: 5px; }
       @media (min-width: 43.75em) {
         .App > svg.writings-svg {
           bottom: 20px;
-          right: 20px; }
+          left: 20px; }
           .App > svg.writings-svg.hovered {
             width: 170px;
             height: 170px; } }
       @media (min-width: 68.75em) {
         .App > svg.writings-svg {
-          bottom: 120px;
-          right: 120px; } }
+          bottom: 50px;
+          left: 120px; } }
       @media (min-width: 90em) {
         .App > svg.writings-svg {
-          bottom: 180px;
-          right: 140px; } }
-      @media (min-width: 120em) {
-        .App > svg.writings-svg {
-          bottom: 180px;
-          right: 250px; } }
-    .App > svg.contact-svg {
-      top: 5px;
-      left: 60px; }
-      @media (min-width: 43.75em) {
-        .App > svg.contact-svg {
-          top: 30px;
-          left: 40px; }
-          .App > svg.contact-svg.hovered {
-            width: 190px;
-            height: 190px; } }
-      @media (min-width: 68.75em) {
-        .App > svg.contact-svg {
-          top: 80px;
-          left: 100px; } }
-      @media (min-width: 90em) {
-        .App > svg.contact-svg {
-          top: 130px;
+          bottom: 150px;
           left: 150px; } }
       @media (min-width: 120em) {
+        .App > svg.writings-svg {
+          bottom: 120px;
+          left: 300px; } }
+    .App > svg.contact-svg {
+      bottom: 25px;
+      right: 30px; }
+      @media (min-width: 43.75em) {
         .App > svg.contact-svg {
-          top: 170px;
-          left: 350px; } }
+          bottom: 30px;
+          right: 40px; }
+          .App > svg.contact-svg.hovered {
+            width: 180px;
+            height: 180px; } }
+      @media (min-width: 68.75em) {
+        .App > svg.contact-svg {
+          bottom: 90px;
+          right: 130px; } }
+      @media (min-width: 90em) {
+        .App > svg.contact-svg {
+          bottom: 130px;
+          right: 120px; } }
+      @media (min-width: 120em) {
+        .App > svg.contact-svg {
+          bottom: 190px;
+          right: 350px; } }
     .App > svg.expand {
       opacity: 1;
-      transform: scale(38) rotate(125deg); }
+      transform: scale(40) rotate(75deg); }
+      @media (min-height: 1300px) and (min-width: 1000px) {
+        .App > svg.expand {
+          transform: scale(50) rotate(75deg); } }
+      @media (min-width: 100em) {
+        .App > svg.expand {
+          transform: scale(50) rotate(65deg); } }
