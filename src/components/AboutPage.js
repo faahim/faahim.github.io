@@ -17,8 +17,8 @@ const AboutPage = props => {
             <div className="page-content">
               <p>Hi there! <span className="hand-wave">👋</span></p>
               <h1>I'm Afiur Rahman Fahim.</h1>
-              <p>But that's quite long! So, I like to use <strong>Faahim.</strong> With an extra optional 'a' :)</p>
-              <p>I'm a 22-year-old developer based in Bangladesh. I specialize in JavaScript and my main area of interest is Front-End Development. I love developing tools/sites/apps that solve real problems or help make someone's life easier. I like impactful work.</p>
+              <p>You can call me <strong>Faahim.</strong> :)</p>
+              <p>I'm a full-stack developer based in Bangladesh. I specialize in JavaScript and my main area of interest is Front-End Development. I love developing tools/sites/apps that solve real problems or help make someone's life easier. I like impactful work.</p>
               <h3>Skills</h3>
               <p>My current skill set includes <strong>JavaScript</strong>, <strong>React</strong>, <strong>Redux</strong>, <strong>Firebase</strong>, <strong>SASS</strong>, <strong>Bootstrap</strong>, <strong>CSS</strong>, <strong>HTML</strong> etc. And that's excluding all the common (yet sometimes complex) build/workflow tools like Webpack, Babel etc.</p>
               <p>However, I believe in tool agnostic skills. Being in an industry that moves at the speed of time, it sometimes doesn't matter what frameworks/tools I'm familiar with. Because tools/frameworks are so fickle these days that they can become obsolete within months! What matters more is how fast can I learn and make myself comfortable with newer technology. I believe I'm a quick learner. I prioritize concepts over techniques.</p>
