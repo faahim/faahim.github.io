@@ -1,0 +1,37 @@
+{
+  "name": "faahim.github.io",
+  "version": "0.1.0",
+  "author": {
+    "name": "Afiur Rahman Fahim",
+    "email": "afiur.fahim@gmail.com",
+    "url": "https://faahim.github.io"
+  },
+  "license": "MIT",
+  "homepage": "https://faahim.github.io/",
+  "private": true,
+  "dependencies": {
+    "node-sass-chokidar": "0.0.3",
+    "normalize.css": "^8.0.0",
+    "npm-run-all": "^4.1.2",
+    "react": "^16.2.0",
+    "react-anime": "^2.1.0",
+    "react-custom-scroll": "^3.0.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/styles/sass -o src/styles",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles/sass -o src/styles --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}

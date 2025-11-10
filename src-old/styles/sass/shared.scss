@@ -1,0 +1,88 @@
+//Hasta Luego Mixins
+@mixin goingLarge($width) {
+  @media (min-width: $width/16+em) { @content; }
+}
+
+//Remove outline from button and link when in focus or active
+button:active, button:focus, a:active, a:focus {
+  outline: none;
+}
+
+//Heading Typography
+@mixin heading-style {
+  font-size: 2rem;
+  @include goingLarge(600) {
+    font-size: 2.8rem;
+    line-height: 40px;
+  }
+}
+
+//Link effect
+@mixin link-style {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;  
+  border-radius: 5px;
+  position: relative;
+  transition: all .3s;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(12, 0, 177, 0.5);
+    border-radius: 3px;
+    transition: all 0.3s;
+    @include goingLarge(1000) {
+      height: 5px;
+      transform: scaleX(.9);
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    border-radius: 3px;
+    transform: scaleX(0);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out .0s;
+  }
+  &:hover {
+  &::before {
+    background-color: rgba(12, 0, 177, 0.7);    
+    transform: scaleX(1);
+    height: 100%;
+  }
+  &::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  }
+}
+
+//Page side-title
+@mixin page-tag {
+  display: none;
+  text-shadow: 2px 6px 10px #bd26e2;
+  @include goingLarge(1000) {
+    display: block;
+    font-size: 5rem;
+    transform: rotate(-90deg);
+    position: fixed;
+    top: 40%;
+    font-weight: 700;
+    opacity: 0.1;
+  }
+  @include goingLarge(1400) {
+    font-size: 6rem;
+  }
+}

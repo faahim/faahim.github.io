@@ -1,0 +1,71 @@
+@import "./shared.scss";
+
+.about-page {
+  height: 100vh;
+  color: #fff;
+  padding: 60px 0;
+  position: relative;
+  @include goingLarge(1000) {
+    padding: 80px 180px 100px 100px;
+  }
+  @include goingLarge(1400) {
+    padding: 100px 500px 100px 200px;
+  }
+  p.page-tag {
+    @include page-tag;
+  }
+  .page-content {
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+    @include goingLarge(1100) {
+      padding-left: 40px;
+    }
+    h1 {
+      @include heading-style;
+    }
+    h3 {
+      font-size: 1.8rem;
+      @include goingLarge(1000) {
+        font-size: 2.2rem;
+      }
+    }
+    p {
+      font-size: 1.3rem;
+      @include goingLarge(600) {
+        font-size: 1.8rem;
+      }
+      span.hand-wave {
+        display: inline-block;
+        animation: heyy 3s infinite;
+      }
+    }
+  }
+}
+
+@keyframes heyy {
+  20% {
+    transform: scale(1.3) rotate(85deg);
+  }
+  25% {
+    transform: scale(1.3) rotate(25deg);
+  }
+  30% {
+    transform: scale(1.3) rotate(85deg);
+  }
+  35% {
+    transform: scale(1.3) rotate(25deg);
+  }
+  40% {
+    transform: scale(1.3) rotate(85deg);
+  }
+  45% {
+    transform: scale(1.3) rotate(25deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(85deg);
+  }
+  70% {
+    transform: scale(1) rotate(0);
+  }
+}

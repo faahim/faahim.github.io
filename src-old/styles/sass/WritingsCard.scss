@@ -1,0 +1,8 @@
+@import "./shared.scss";
+
+.writings-card {
+  background-color: rgba(220, 225, 229, 0.7);
+  @include goingLarge(800) {
+    background-color: rgba(220, 225, 229, 0.5);    
+  }
+}

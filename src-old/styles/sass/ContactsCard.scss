@@ -1,0 +1,8 @@
+@import "./shared.scss";
+
+.contacts-card {
+  background-color: rgba(237, 217, 246, 0.7);
+  @include goingLarge(800) {
+    background-color: rgba(237, 217, 246, 0.5);
+  }
+}

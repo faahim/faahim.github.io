@@ -1,0 +1,143 @@
+@import "./shared.scss";
+
+.App {
+    display: grid;
+    min-height: 100vh;
+    max-height: 100vh;
+    box-sizing: border-box;
+    padding: 0 20px;
+    position: relative;
+    font-family: 'museo-sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2.6;
+    @include goingLarge(1000) {
+        line-height: 35px;
+    }
+    &.single-card > svg {
+            opacity: 0;
+            transform: scale(0) rotate(125deg);
+    }
+    & > svg {
+        position: fixed;
+        // animation: float 10s infinite;
+        z-index: -1;
+        transition: all 1s;
+        width: 65px;
+        @include goingLarge(350)  {
+            width: 90px;
+        }
+        @include goingLarge(550) {
+            width: 100px;
+        }
+        @include goingLarge(700) {
+            width: 150px;
+        }
+        &.about-svg {
+            top: 30px;
+            left: 20px;
+            // transition: all .5s;
+            @include goingLarge(700) {
+                top: 95px;
+                left: 20px;
+                &.hovered {
+                    width: 140px;
+                    height: 140px;
+                }
+            }
+            @include goingLarge(1100) {
+                top: 75px;
+                left: 220px;
+            }
+            @include goingLarge(1440) {
+                top: 100px;
+                left: 280px;
+            }
+            @include goingLarge(1920) {
+                top: 225px;
+                left: 380px;
+            }
+        }
+        &.projects-svg {
+            top: 2px;
+            right: 15px;
+            @include goingLarge(700) {
+                top: 25px;
+                right: 45px;
+                &.hovered {
+                    width: 165px;
+                    height: 165px;
+                }
+            }
+            @include goingLarge(1100) {
+                top: 50px;
+                right: 100px;
+            }
+            @include goingLarge(1440) {
+                top: 175px;
+                right: 185px;
+            }
+            @include goingLarge(1920) {
+                top: 155px;
+                right: 355px;
+            }
+        }
+        &.writings-svg {
+            bottom: 5px;
+            left: 5px;
+            @include goingLarge(700) {
+                bottom: 20px;
+                left: 20px;
+                &.hovered {
+                    width: 170px;
+                    height: 170px;
+                }
+            }
+            @include goingLarge(1100) {
+                bottom: 50px;
+                left: 120px;
+            }
+            @include goingLarge(1440) {
+                bottom: 150px;
+                left: 150px;
+            }
+            @include goingLarge(1920) {
+                bottom: 120px;
+                left: 300px;
+            }
+        }
+        &.contact-svg {
+            bottom: 25px;
+            right: 30px;
+            @include goingLarge(700) {
+                bottom: 30px;
+                right: 40px;
+                &.hovered {
+                    width: 180px;
+                    height: 180px;
+                }
+            }
+            @include goingLarge(1100) {
+                bottom: 90px;
+                right: 130px;
+            }
+            @include goingLarge(1440) {
+                bottom: 130px;
+                right: 120px;
+            }
+            @include goingLarge(1920) {
+                bottom: 190px;
+                right: 350px;
+            }
+        }
+        &.expand {
+            opacity: 1;
+            transform: scale(40) rotate(75deg);
+            @media (min-height: 1300px) and (min-width: 1000px) {
+            transform: scale(50) rotate(75deg);
+            }
+            @include goingLarge(1600) {
+                transform: scale(50) rotate(65deg);                
+            }
+        }
+    }
+}

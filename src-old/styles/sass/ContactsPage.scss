@@ -1,0 +1,107 @@
+@import "./shared.scss";
+
+.contacts-page {
+  height: 95vh;
+  color: #fff;
+  padding: 60px 0;
+  position: relative;
+  @include goingLarge(1000) {
+    padding: 80px 180px 100px 100px;
+  }
+  @include goingLarge(1400) {
+    padding: 100px 500px 100px 200px;
+  }
+  p.page-tag {
+    @include page-tag;
+  }
+  .page-content {
+    padding: 0 20px;
+    height: 100%;
+    position: relative;
+    @include goingLarge(1100) {
+      padding-left: 40px;
+    }
+    h1 {
+      @include heading-style;
+    }
+    p {
+      font-size: 1.2rem;
+      @include goingLarge(800) {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+    .link-list {
+      ul {
+        padding-left: 0;
+        text-align: center;
+        // width: 80%;
+        // margin: 0 auto;
+        li {
+          list-style-type: none;
+          display: inline-block;
+          margin: 10px;
+          a {
+            display: inline-block;
+            padding: 12px;
+            // background-color: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 1px 1px 15px 0 rgba(180, 0, 255, 0.5);
+            position: relative;
+            transform: translateX(0);
+            transition: all .3s;
+            &::before {
+              content: "";
+              display: inline-block;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              bottom: 0;
+              right: 0;
+              z-index: -1;
+              background-color: #5655b0;
+              transition: all .3s ease-in-out 0s;
+            }
+            &::after {
+              content: "";
+              display: inline-block;
+              position: absolute;
+              width: 2px;
+              height: 2px;
+              border-radius: 50%;
+              bottom: 0;
+              left: 0;
+              z-index: -1;
+              transform: scale(0);
+              visibility: hidden;
+              background-color: rgb(2, 148, 206);
+              transition: all .3s ease-in-out 0s;
+            }
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 1px 2px 10px 2px rgba(180, 0, 255, 0.5);
+              &::after {
+                width: 100%;
+                height: 100%;
+                transform: scale(1);
+                visibility: visible;
+              }
+              img {
+                color: #fff;
+              }
+            }
+            img {
+              vertical-align: middle;
+              width: 20px;
+              @include goingLarge(800) {
+                width: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

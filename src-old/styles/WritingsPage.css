@@ -1,0 +1,117 @@
+button:active, button:focus, a:active, a:focus {
+  outline: none; }
+
+.writings-page {
+  height: 100vh;
+  color: #fff;
+  padding: 60px 0;
+  position: relative; }
+  @media (min-width: 62.5em) {
+    .writings-page {
+      padding: 80px 180px 100px 100px; } }
+  @media (min-width: 100em) {
+    .writings-page {
+      padding: 100px 300px 100px 200px; } }
+  .writings-page p.page-tag {
+    display: none;
+    text-shadow: 2px 6px 10px #bd26e2; }
+    @media (min-width: 62.5em) {
+      .writings-page p.page-tag {
+        display: block;
+        font-size: 5rem;
+        transform: rotate(-90deg);
+        position: fixed;
+        top: 40%;
+        font-weight: 700;
+        opacity: 0.1; } }
+    @media (min-width: 87.5em) {
+      .writings-page p.page-tag {
+        font-size: 6rem; } }
+  .writings-page .page-content {
+    padding: 0 20px;
+    height: 100%;
+    position: relative; }
+    @media (min-width: 68.75em) {
+      .writings-page .page-content {
+        padding-left: 40px; } }
+    .writings-page .page-content h1 {
+      font-size: 2rem; }
+      @media (min-width: 37.5em) {
+        .writings-page .page-content h1 {
+          font-size: 2.8rem;
+          line-height: 40px; } }
+    .writings-page .page-content p {
+      font-size: 1.2rem; }
+      @media (min-width: 50em) {
+        .writings-page .page-content p {
+          font-size: 1.5rem;
+          font-weight: 500; } }
+    .writings-page .page-content .article-list {
+      margin-top: 50px; }
+      .writings-page .page-content .article-list ul {
+        padding-left: 0; }
+        .writings-page .page-content .article-list ul li {
+          list-style-type: none;
+          position: relative;
+          margin-bottom: 30px; }
+          .writings-page .page-content .article-list ul li a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: relative;
+            transition: all .3s;
+            line-height: 35px;
+            font-size: 1rem;
+            margin: 0; }
+            .writings-page .page-content .article-list ul li a::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              bottom: 0px;
+              left: 0;
+              z-index: -1;
+              background-color: rgba(12, 0, 177, 0.5);
+              border-radius: 3px;
+              transition: all 0.3s; }
+              @media (min-width: 62.5em) {
+                .writings-page .page-content .article-list ul li a::before {
+                  height: 5px;
+                  transform: scaleX(0.9); } }
+            .writings-page .page-content .article-list ul li a::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: #fff;
+              border-radius: 3px;
+              transform: scaleX(0);
+              visibility: hidden;
+              transition: all 0.3s ease-in-out .0s; }
+            .writings-page .page-content .article-list ul li a:hover::before {
+              background-color: rgba(12, 0, 177, 0.7);
+              transform: scaleX(1);
+              height: 100%; }
+            .writings-page .page-content .article-list ul li a:hover::after {
+              visibility: visible;
+              transform: scaleX(1); }
+            @media (min-width: 50em) {
+              .writings-page .page-content .article-list ul li a {
+                font-size: 2rem; } }
+          .writings-page .page-content .article-list ul li span {
+            position: relative;
+            padding: 2px 5px;
+            left: 0;
+            bottom: -8px;
+            color: #fff;
+            background-color: #00a362;
+            font-size: .9rem; }
+            @media (min-width: 62.5em) {
+              .writings-page .page-content .article-list ul li span {
+                bottom: 0;
+                left: 20px; } }
