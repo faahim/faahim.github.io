@@ -7,6 +7,59 @@ interface AboutPageProps {
   returnBtn: () => void;
 }
 
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: -30
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.3, ease: "easeOut" as const }
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const }
+  }
+};
+
+const pageTagVariants = {
+  initial: {
+    rotate: -90,
+    x: -200,
+    opacity: 0
+  },
+  animate: {
+    rotate: -90,
+    x: 0,
+    opacity: 0.1,
+    transition: { duration: 0.5, delay: 0.8, ease: "easeOut" as const }
+  },
+  exit: {
+    rotate: -90,
+    x: -200,
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const }
+  }
+};
+
+const contentVariants = {
+  initial: {
+    opacity: 0,
+    y: -20
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.4, ease: "easeOut" as const }
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: { duration: 0.3, ease: "easeOut" as const }
+  }
+};
+
 const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
   return (
     <>
@@ -16,20 +69,28 @@ const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
       </Helmet>
       <motion.div
         className="about-page"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
         <BackToHomeBtn handleClick={returnBtn} />
         <motion.p
           className="page-tag"
-          initial={{ left: -350 }}
-          animate={{ left: -150 }}
-          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          variants={pageTagVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
         >
           About Me
         </motion.p>
-        <div className="page-content-wrapper">
+        <motion.div
+          className="page-content-wrapper"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           <div className="page-content">
             <p>Hi there! <span className="hand-wave">👋</span></p>
             <h1>I'm Afiur Rahman Fahim.</h1>
@@ -43,7 +104,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
             <p>Simplicity, though overused (and sometimes misused) as a term, is something I really value. I like to build solutions that are simple yet interactive for the users.</p>
             <p>Besides coding, I'm also very passionate about traveling and reading. I feel like the world is a book that was given to me for exploring when I was born, and I don't wanna die before reading all the pages. I plan to become a nomad someday and explore the endless beauty that this planet homes.</p>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </>
   );

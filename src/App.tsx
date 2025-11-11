@@ -8,20 +8,84 @@ import ContactsPage from './components/ContactsPage';
 import type { CardType } from './types';
 import './styles/App.scss';
 
+// SVG Animation Configuration
+const SVG_ANIMATION_CONFIG = {
+  // Explosion (when card is clicked)
+  explosion: {
+    scale: 40,
+    rotate: 75,
+    opacity: 1,
+    y: 0,
+  },
+
+  // Non-active SVGs (when a different card is selected)
+  inactive: {
+    scale: 0.5,
+    rotate: -25,
+    opacity: 0,
+    y: 0,
+  },
+
+  // Hover state
+  hover: {
+    scale: 1.2,
+    rotate: 0,
+    opacity: 1,
+    y: [0, -12, 0], // Breathing animation: up and down
+  },
+
+  // Default/resting state
+  default: {
+    scale: 1,
+    rotate: 0,
+    opacity: 1,
+    y: 0,
+  },
+
+  // Transition timings
+  transitions: {
+    hover: {
+      duration: 0.6,
+      ease: "easeInOut" as const,
+      y: {
+        repeat: Infinity,
+        duration: 3,
+        ease: "easeInOut" as const,
+      },
+    },
+    default: {
+      duration: 0.6,
+      ease: "linear" as const,
+    },
+  },
+};
+
 const App: React.FC = () => {
   const [cardSelected, setCardSelected] = useState(false);
   const [chosenCard, setChosenCard] = useState<CardType | null>(null);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [showCards, setShowCards] = useState(true);
+  const [cardsAnimating, setCardsAnimating] = useState(false);
 
   const clickHandler = (cardName: CardType) => () => {
     setCardSelected(true);
     setChosenCard(cardName);
     setHoveredCard(null);
+    setShowCards(false);
   };
 
   const returnHome = () => {
     setCardSelected(false);
-    setChosenCard(null);
+    setChosenCard(null); // Trigger exit animation immediately
+  };
+
+  const handleExitComplete = () => {
+    // After page exits, show and animate cards
+    setShowCards(true);
+    setCardsAnimating(true);
+    setTimeout(() => {
+      setCardsAnimating(false);
+    }, 1000);
   };
 
   const mouseEnter = (cardName: string) => () => {
@@ -39,13 +103,13 @@ const App: React.FC = () => {
   const renderPage = () => {
     switch (chosenCard) {
       case 'about':
-        return <AboutPage returnBtn={returnHome} />;
+        return <AboutPage key="about" returnBtn={returnHome} />;
       case 'projects':
-        return <ProjectsPage returnBtn={returnHome} />;
+        return <ProjectsPage key="projects" returnBtn={returnHome} />;
       case 'writings':
-        return <WritingsPage returnBtn={returnHome} />;
+        return <WritingsPage key="writings" returnBtn={returnHome} />;
       case 'contact':
-        return <ContactsPage returnBtn={returnHome} />;
+        return <ContactsPage key="contact" returnBtn={returnHome} />;
       default:
         return null;
     }
@@ -53,46 +117,51 @@ const App: React.FC = () => {
 
   return (
     <div className={cardSelected ? 'App single-card' : 'App'}>
-      <AnimatePresence mode="wait">
-        {!cardSelected && (
-          <motion.div
-            key="cards"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <CardContainer
-              clickHandler={clickHandler}
-              mouseEnter={mouseEnter}
-              mouseLeave={mouseLeave}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Keep cards in DOM but hidden to prevent layout shift */}
+      <motion.div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '100%',
+          transform: 'translate(-50%, -50%)',
+          visibility: showCards ? 'visible' : 'hidden',
+          pointerEvents: (showCards && !cardsAnimating) ? 'auto' : 'none',
+          zIndex: showCards ? 1 : -1
+        }}
+        initial={false}
+        animate={{ opacity: showCards ? 1 : 0 }}
+        transition={{ duration: 0.3, delay: showCards ? 0.2 : 0 }}
+      >
+        <CardContainer
+          clickHandler={clickHandler}
+          mouseEnter={mouseEnter}
+          mouseLeave={mouseLeave}
+          key={showCards ? 'cards-visible' : 'cards-hidden'}
+        />
+      </motion.div>
 
-      <AnimatePresence mode="wait">
-        {chosenCard && (
-          <motion.div
-            key={chosenCard}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {renderPage()}
-          </motion.div>
-        )}
+      <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+        {chosenCard && renderPage()}
       </AnimatePresence>
 
       {/* SVG Background Shapes with Framer Motion - About */}
       <motion.svg
-        className={`about-svg ${hoveredCard === 'about' ? 'hovered' : ''}`}
+        className="about-svg"
         animate={
           cardSelected && chosenCard === 'about'
-            ? { scale: 40, rotate: 75, opacity: 1 }
-            : { scale: 1, rotate: 0, opacity: 1 }
+            ? SVG_ANIMATION_CONFIG.explosion
+            : cardSelected
+            ? SVG_ANIMATION_CONFIG.inactive
+            : hoveredCard === 'about'
+            ? SVG_ANIMATION_CONFIG.hover
+            : SVG_ANIMATION_CONFIG.default
         }
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={
+          hoveredCard === 'about'
+            ? SVG_ANIMATION_CONFIG.transitions.hover
+            : SVG_ANIMATION_CONFIG.transitions.default
+        }
         width="120"
         height="120"
         viewBox="0 0 1400 1400"
@@ -119,13 +188,21 @@ const App: React.FC = () => {
 
       {/* SVG Background Shapes - Projects */}
       <motion.svg
-        className={`projects-svg ${hoveredCard === 'projects' ? 'hovered' : ''}`}
+        className="projects-svg"
         animate={
           cardSelected && chosenCard === 'projects'
-            ? { scale: 40, rotate: 75, opacity: 1 }
-            : { scale: 1, rotate: 0, opacity: 1 }
+            ? SVG_ANIMATION_CONFIG.explosion
+            : cardSelected
+            ? SVG_ANIMATION_CONFIG.inactive
+            : hoveredCard === 'projects'
+            ? SVG_ANIMATION_CONFIG.hover
+            : SVG_ANIMATION_CONFIG.default
         }
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={
+          hoveredCard === 'projects'
+            ? SVG_ANIMATION_CONFIG.transitions.hover
+            : SVG_ANIMATION_CONFIG.transitions.default
+        }
         width="140"
         height="140"
         viewBox="0 0 1132 1261"
@@ -152,13 +229,21 @@ const App: React.FC = () => {
 
       {/* SVG Background Shapes - Writings */}
       <motion.svg
-        className={`writings-svg ${hoveredCard === 'writings' ? 'hovered' : ''}`}
+        className="writings-svg"
         animate={
           cardSelected && chosenCard === 'writings'
-            ? { scale: 40, rotate: 75, opacity: 1 }
-            : { scale: 1, rotate: 0, opacity: 1 }
+            ? SVG_ANIMATION_CONFIG.explosion
+            : cardSelected
+            ? SVG_ANIMATION_CONFIG.inactive
+            : hoveredCard === 'writings'
+            ? SVG_ANIMATION_CONFIG.hover
+            : SVG_ANIMATION_CONFIG.default
         }
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={
+          hoveredCard === 'writings'
+            ? SVG_ANIMATION_CONFIG.transitions.hover
+            : SVG_ANIMATION_CONFIG.transitions.default
+        }
         width="150"
         height="150"
         viewBox="0 0 543 644"
@@ -185,13 +270,21 @@ const App: React.FC = () => {
 
       {/* SVG Background Shapes - Contact */}
       <motion.svg
-        className={`contact-svg ${hoveredCard === 'contact' ? 'hovered' : ''}`}
+        className="contact-svg"
         animate={
           cardSelected && chosenCard === 'contact'
-            ? { scale: 40, rotate: 75, opacity: 1 }
-            : { scale: 1, rotate: 0, opacity: 1 }
+            ? SVG_ANIMATION_CONFIG.explosion
+            : cardSelected
+            ? SVG_ANIMATION_CONFIG.inactive
+            : hoveredCard === 'contact'
+            ? SVG_ANIMATION_CONFIG.hover
+            : SVG_ANIMATION_CONFIG.default
         }
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={
+          hoveredCard === 'contact'
+            ? SVG_ANIMATION_CONFIG.transitions.hover
+            : SVG_ANIMATION_CONFIG.transitions.default
+        }
         width="160"
         height="160"
         viewBox="0 0 607 586"

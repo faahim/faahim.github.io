@@ -29,6 +29,59 @@ interface WritingsPageProps {
   returnBtn: () => void;
 }
 
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: -30
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.3, ease: "easeOut" as const }
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const }
+  }
+};
+
+const pageTagVariants = {
+  initial: {
+    rotate: -90,
+    x: -230,
+    opacity: 0
+  },
+  animate: {
+    rotate: -90,
+    x: 0,
+    opacity: 0.1,
+    transition: { duration: 0.5, delay: 0.8, ease: "easeOut" as const }
+  },
+  exit: {
+    rotate: -90,
+    x: -230,
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const }
+  }
+};
+
+const contentVariants = {
+  initial: {
+    opacity: 0,
+    y: -20
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.4, ease: "easeOut" as const }
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: { duration: 0.3, ease: "easeOut" as const }
+  }
+};
+
 const WritingsPage: React.FC<WritingsPageProps> = ({ returnBtn }) => {
   return (
     <>
@@ -38,20 +91,28 @@ const WritingsPage: React.FC<WritingsPageProps> = ({ returnBtn }) => {
       </Helmet>
       <motion.div
         className="writings-page"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
         <BackToHomeBtn handleClick={returnBtn} />
         <motion.p
           className="page-tag"
-          initial={{ left: -350 }}
-          animate={{ left: -120 }}
-          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          variants={pageTagVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
         >
           Writings
         </motion.p>
-        <div className="page-content-wrapper">
+        <motion.div
+          className="page-content-wrapper"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           <div className="page-content">
             <h1>I love to write about my experiences!</h1>
             <p className="page-intro">
@@ -66,7 +127,7 @@ const WritingsPage: React.FC<WritingsPageProps> = ({ returnBtn }) => {
               <ArticleList articleList={writingsData} />
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </>
   );

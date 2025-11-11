@@ -15,9 +15,14 @@ const ContactsCard: React.FC<ContactsCardProps> = ({ onClick, onMouseEnter, onMo
       onClick={onClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      initial={{ opacity: 0, scale: scaleArr[0] }}
-      animate={{ opacity: 1, scale: scaleArr[1] }}
-      transition={{ duration: 0.3, delay: 0.3, ease: "easeIn" }}
+      initial={{ opacity: 0, scale: scaleArr[0], y: 20 }}
+      animate={{ opacity: 1, scale: scaleArr[1], y: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        delay: 0.3
+      }}
     >
       <h2>Get in touch!</h2>
       <p>I'm friendly, Let's talk!</p>

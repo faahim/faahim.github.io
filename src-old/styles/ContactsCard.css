@@ -1,8 +1,0 @@
-button:active, button:focus, a:active, a:focus {
-  outline: none; }
-
-.contacts-card {
-  background-color: rgba(237, 217, 246, 0.7); }
-  @media (min-width: 50em) {
-    .contacts-card {
-      background-color: rgba(237, 217, 246, 0.5); } }

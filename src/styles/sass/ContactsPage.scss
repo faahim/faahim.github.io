@@ -1,7 +1,7 @@
 @import "./shared.scss";
 
 .contacts-page {
-  height: 95vh;
+  min-height: 100vh;
   color: #fff;
   padding: 60px 0;
   position: relative;
@@ -15,11 +15,11 @@
     @include page-tag;
   }
   .page-content {
-    padding: 0 20px;
-    height: 100%;
+    padding: 0 20px 40px 20px;
     position: relative;
     @include goingLarge(1100) {
       padding-left: 40px;
+      padding-bottom: 60px;
     }
     h1 {
       @include heading-style;
@@ -34,9 +34,7 @@
     .link-list {
       ul {
         padding-left: 0;
-        text-align: center;
-        // width: 80%;
-        // margin: 0 auto;
+        text-align: left;
         li {
           list-style-type: none;
           display: inline-block;

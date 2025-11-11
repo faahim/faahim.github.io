@@ -14,6 +14,59 @@ interface ContactsPageProps {
   returnBtn: () => void;
 }
 
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: -30
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.3, ease: "easeOut" as const }
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const }
+  }
+};
+
+const pageTagVariants = {
+  initial: {
+    rotate: -90,
+    x: -220,
+    opacity: 0
+  },
+  animate: {
+    rotate: -90,
+    x: 0,
+    opacity: 0.1,
+    transition: { duration: 0.5, delay: 0.8, ease: "easeOut" as const }
+  },
+  exit: {
+    rotate: -90,
+    x: -220,
+    opacity: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const }
+  }
+};
+
+const contentVariants = {
+  initial: {
+    opacity: 0,
+    y: -20
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.4, ease: "easeOut" as const }
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: { duration: 0.3, ease: "easeOut" as const }
+  }
+};
+
 const ContactsPage: React.FC<ContactsPageProps> = ({ returnBtn }) => {
   return (
     <>
@@ -23,20 +76,28 @@ const ContactsPage: React.FC<ContactsPageProps> = ({ returnBtn }) => {
       </Helmet>
       <motion.div
         className="contacts-page"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
         <BackToHomeBtn handleClick={returnBtn} />
         <motion.p
           className="page-tag"
-          initial={{ left: -350 }}
-          animate={{ left: -130 }}
-          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          variants={pageTagVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
         >
           Contacts
         </motion.p>
-        <div className="page-content">
+        <motion.div
+          className="page-content"
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           <h1>Let's get in touch!</h1>
           <p>
             I love meeting new people from around the world! Hit me up to talk about project ideas, Programming, JavaScript,
@@ -82,7 +143,7 @@ const ContactsPage: React.FC<ContactsPageProps> = ({ returnBtn }) => {
               </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </>
   );

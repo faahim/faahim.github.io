@@ -14,14 +14,32 @@ interface BackToHomeBtnProps {
   handleClick: () => void;
 }
 
+const buttonVariants = {
+  initial: {
+    opacity: 0,
+    y: -20
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.3, ease: "easeOut" as const }
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: { duration: 0.3, ease: "easeOut" as const }
+  }
+};
+
 const BackToHomeBtn: React.FC<BackToHomeBtnProps> = ({ handleClick }) => {
   return (
     <motion.button
       onClick={handleClick}
       className="btn-back"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ duration: 0.5, ease: "easeIn" }}
+      variants={buttonVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
       <BtnIcon />
     </motion.button>

@@ -1,7 +1,7 @@
 @import "./shared.scss";
 
 .writings-page {
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   padding: 60px 0;
   position: relative;
@@ -14,12 +14,15 @@
   p.page-tag {
     @include page-tag;
   }
+  .page-content-wrapper {
+    position: relative;
+  }
   .page-content {
-    padding: 0 20px;
-    height: 100%;
+    padding: 0 20px 40px 20px;
     position: relative;
     @include goingLarge(1100) {
       padding-left: 40px;
+      padding-bottom: 60px;
     }
     h1 {
       @include heading-style;

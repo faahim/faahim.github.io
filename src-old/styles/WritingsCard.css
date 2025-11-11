@@ -1,8 +1,0 @@
-button:active, button:focus, a:active, a:focus {
-  outline: none; }
-
-.writings-card {
-  background-color: rgba(220, 225, 229, 0.7); }
-  @media (min-width: 50em) {
-    .writings-card {
-      background-color: rgba(220, 225, 229, 0.5); } }
