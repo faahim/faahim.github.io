@@ -23,9 +23,10 @@ button:active, button:focus, a:active, a:focus {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  padding: 5px 10px;  
+  padding: 5px 10px;
   border-radius: 5px;
   position: relative;
+  z-index: 1;
   transition: all .3s;
   &::before {
     content: "";
@@ -50,6 +51,7 @@ button:active, button:focus, a:active, a:focus {
     height: 2px;
     bottom: 0;
     left: 0;
+    z-index: -1;
     background-color: #fff;
     border-radius: 3px;
     transform: scaleX(0);
@@ -57,15 +59,15 @@ button:active, button:focus, a:active, a:focus {
     transition: all 0.3s ease-in-out .0s;
   }
   &:hover {
-  &::before {
-    background-color: rgba(12, 0, 177, 0.7);    
-    transform: scaleX(1);
-    height: 100%;
-  }
-  &::after {
-    visibility: visible;
-    transform: scaleX(1);
-  }
+    &::before {
+      background-color: rgba(12, 0, 177, 0.7);
+      transform: scaleX(1);
+      height: 100%;
+    }
+    &::after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -76,7 +78,6 @@ button:active, button:focus, a:active, a:focus {
   @include goingLarge(1000) {
     display: block;
     font-size: 5rem;
-    transform: rotate(-90deg);
     position: fixed;
     top: 40%;
     font-weight: 700;
@@ -84,5 +85,25 @@ button:active, button:focus, a:active, a:focus {
   }
   @include goingLarge(1400) {
     font-size: 6rem;
+  }
+}
+
+// Specific left positioning for each page (final position)
+.about-page .page-tag {
+  @include goingLarge(1000) {
+    left: -150px;
+  }
+}
+
+.projects-page .page-tag,
+.writings-page .page-tag {
+  @include goingLarge(1000) {
+    left: -120px;
+  }
+}
+
+.contacts-page .page-tag {
+  @include goingLarge(1000) {
+    left: -130px;
   }
 }

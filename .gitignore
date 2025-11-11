@@ -11,6 +11,10 @@
 
 # production
 /build
+/dist
+
+# old backups
+/src-old
 
 # misc
 .DS_Store
