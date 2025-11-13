@@ -94,15 +94,20 @@ const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
           <div className="page-content">
             <p>Hi there! <span className="hand-wave">👋</span></p>
             <h1>I'm Afiur Rahman Fahim.</h1>
-            <p>You can call me <strong>Faahim.</strong> :)</p>
-            <p>I'm a full-stack developer based in Bangladesh. I like creating stuff. Useful and beautiful stuff. Stuff that doesn't just work, but looks and feels good - like a butterfly fluttering on your fingertips.</p>
+            <p>Yeah, yeah. You can call me <strong>Faahim.</strong> :)</p>
+            <p>I love creating things for the internet. Useful things. Beautiful things. Things that not only work, but look and feel good. Like a butterfly landing on your fingertips, if butterflies were made of code.</p>
+            <p>I'm based in Bangladesh, but my mind wanders to places. Thank God, the mind doesn't need visas.</p>
 
             <h3>Skills</h3>
-            <p>My current stack consists of <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, <strong>Shadcn UI</strong>, <strong>Supabase</strong>, <strong>Firebase</strong>, <strong>SASS</strong>, with foundational things like <strong>CSS</strong>, <strong>HTML</strong> of course.</p>
+            <p>I believe in tool-agnostic core skills. This industry moves faster than over-caffeinated Usain Bolt. Tools and frameworks come and go as if they're having an existential crisis. I value the ability to pick up new skills quickly. So for me, it's fundamentals over frameworks. However, my go-to stack consists of <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Next.js</strong> etc.</p>
 
-            <p>However, I believe in tool agnostic, core skills. In an industry that moves faster than Usain Bolt, the choice of frameworks/languages doesn't matter as much. Thanks to all the AI tools, I'm a polyglot now. The ability to learn quickly and be comfortable with newer technology is what matters to me. I'm a quick learner. I prioritize concepts over techniques.</p>
-            <p>Simplicity, though overused (and sometimes misused) as a term, is something I really value. I like to build solutions that are simple yet interactive for the users.</p>
-            <p>Besides coding, I'm also very passionate about traveling and reading. I feel like the world is a book that was given to me for exploring when I was born, and I don't wanna die before reading all the pages. I plan to become a nomad someday and explore the endless beauty that this planet homes.</p>
+            <p>Simplicity and beauty are my north star. I like building things that calm the eye, and just work - no matter how complicated they are under the hood. Something that'd make you go, "Oh, that's nice!"</p>
+
+            <h3>Me without WiFi</h3>
+            <p>If I'm not online, I'm probably reading. Or I'm travelling. Or, I'm reading <em>while</em> travelling.</p>
+            <p>I believe the world is a beautiful book I was gifted at birth, and I don't want to die before flipping through the pages and reading all the stories.</p>
+            <p>I'm overwhelmed by just how interesting everything is. Writing, making friends, music, mountains, cats, arts, quiet forests, busy city streets, contrails at sunset and Orion on a dark night - I like too many things to be good at any single one of them!</p>
+            <p>My dream is to wander the world, read great books, write when ideas bite, meet people, listen to their stories, identify how I can help them using my skill and creativity, and build solutions from cozy coffee shops. Hopefully, with a loved one sitting across from me. 🤞</p>
           </div>
         </motion.div>
       </motion.div>

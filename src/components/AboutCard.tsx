@@ -25,7 +25,7 @@ const AboutCard: React.FC<AboutCardProps> = ({ onClick, onMouseEnter, onMouseLea
       }}
     >
       <h2>I'm Faahim.</h2>
-      <p>I'm a Front-End developer. Click to learn more.</p>
+      <p>I'm a full stack developer. Click to learn more.</p>
     </motion.div>
   );
 };

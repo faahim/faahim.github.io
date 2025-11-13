@@ -25,7 +25,7 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({ onClick, onMouseEnter, onMo
       }}
     >
       <h2>Projects and Contribution</h2>
-      <p>Check out some of the projects I loved working on</p>
+      <p>Some of the projects I loved working on</p>
     </motion.div>
   );
 };
