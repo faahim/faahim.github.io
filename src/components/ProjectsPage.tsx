@@ -43,10 +43,6 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
   );
 };
 
-interface ProjectsPageProps {
-  returnBtn: () => void;
-}
-
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -100,7 +96,7 @@ const contentVariants = {
   }
 };
 
-const ProjectsPage: React.FC<ProjectsPageProps> = ({ returnBtn }) => {
+const ProjectsPage: React.FC = () => {
   return (
     <>
       <Helmet>
@@ -114,7 +110,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ returnBtn }) => {
         animate="animate"
         exit="exit"
       >
-        <BackToHomeBtn handleClick={returnBtn} />
+        <BackToHomeBtn />
         <motion.p
           className="page-tag"
           variants={pageTagVariants}

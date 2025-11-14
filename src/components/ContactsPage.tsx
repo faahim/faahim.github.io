@@ -10,10 +10,6 @@ import linkedin from '../assets/linkedin.svg';
 import codepen from '../assets/codepen.svg';
 import facebook from '../assets/facebook.svg';
 
-interface ContactsPageProps {
-  returnBtn: () => void;
-}
-
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -67,7 +63,7 @@ const contentVariants = {
   }
 };
 
-const ContactsPage: React.FC<ContactsPageProps> = ({ returnBtn }) => {
+const ContactsPage: React.FC = () => {
   return (
     <>
       <Helmet>
@@ -81,7 +77,7 @@ const ContactsPage: React.FC<ContactsPageProps> = ({ returnBtn }) => {
         animate="animate"
         exit="exit"
       >
-        <BackToHomeBtn handleClick={returnBtn} />
+        <BackToHomeBtn />
         <motion.p
           className="page-tag"
           variants={pageTagVariants}

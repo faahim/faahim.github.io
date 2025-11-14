@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import CardContainer from './containers/CardContainer';
 import AboutPage from './components/AboutPage';
@@ -61,35 +62,48 @@ const SVG_ANIMATION_CONFIG = {
 };
 
 const App: React.FC = () => {
-  const [cardSelected, setCardSelected] = useState(false);
-  const [chosenCard, setChosenCard] = useState<CardType | null>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [showCards, setShowCards] = useState(true);
   const [cardsAnimating, setCardsAnimating] = useState(false);
 
+  // Derive card selection state from current route
+  const isHomePage = location.pathname === '/';
+  const currentCard: CardType | null = isHomePage ? null :
+    location.pathname === '/about' ? 'about' :
+    location.pathname === '/projects' ? 'projects' :
+    location.pathname === '/writings' ? 'writings' :
+    location.pathname === '/contact' ? 'contact' : null;
+
+  // Hide cards when navigating away from home
+  useEffect(() => {
+    if (!isHomePage) {
+      setShowCards(false);
+      setHoveredCard(null);
+    }
+  }, [isHomePage]);
+
   const clickHandler = (cardName: CardType) => () => {
-    setCardSelected(true);
-    setChosenCard(cardName);
     setHoveredCard(null);
     setShowCards(false);
-  };
-
-  const returnHome = () => {
-    setCardSelected(false);
-    setChosenCard(null); // Trigger exit animation immediately
+    navigate(`/${cardName}`);
   };
 
   const handleExitComplete = () => {
     // After page exits, show and animate cards
-    setShowCards(true);
-    setCardsAnimating(true);
-    setTimeout(() => {
-      setCardsAnimating(false);
-    }, 1000);
+    if (isHomePage) {
+      setShowCards(true);
+      setCardsAnimating(true);
+      setTimeout(() => {
+        setCardsAnimating(false);
+      }, 1000);
+    }
   };
 
   const mouseEnter = (cardName: string) => () => {
-    if (!cardSelected) {
+    if (isHomePage) {
       setHoveredCard(cardName);
     }
   };
@@ -100,23 +114,8 @@ const App: React.FC = () => {
     }
   };
 
-  const renderPage = () => {
-    switch (chosenCard) {
-      case 'about':
-        return <AboutPage key="about" returnBtn={returnHome} />;
-      case 'projects':
-        return <ProjectsPage key="projects" returnBtn={returnHome} />;
-      case 'writings':
-        return <WritingsPage key="writings" returnBtn={returnHome} />;
-      case 'contact':
-        return <ContactsPage key="contact" returnBtn={returnHome} />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className={cardSelected ? 'App single-card' : 'App'}>
+    <div className={!isHomePage ? 'App single-card' : 'App'}>
       {/* Keep cards in DOM but hidden to prevent layout shift */}
       <motion.div
         style={{
@@ -142,16 +141,23 @@ const App: React.FC = () => {
       </motion.div>
 
       <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-        {chosenCard && renderPage()}
+        {!isHomePage && (
+          <Routes location={location} key={location.pathname}>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/writings" element={<WritingsPage />} />
+            <Route path="/contact" element={<ContactsPage />} />
+          </Routes>
+        )}
       </AnimatePresence>
 
       {/* SVG Background Shapes with Framer Motion - About */}
       <motion.svg
         className="about-svg"
         animate={
-          cardSelected && chosenCard === 'about'
+          !isHomePage && currentCard === 'about'
             ? SVG_ANIMATION_CONFIG.explosion
-            : cardSelected
+            : !isHomePage
             ? SVG_ANIMATION_CONFIG.inactive
             : hoveredCard === 'about'
             ? SVG_ANIMATION_CONFIG.hover
@@ -190,9 +196,9 @@ const App: React.FC = () => {
       <motion.svg
         className="projects-svg"
         animate={
-          cardSelected && chosenCard === 'projects'
+          !isHomePage && currentCard === 'projects'
             ? SVG_ANIMATION_CONFIG.explosion
-            : cardSelected
+            : !isHomePage
             ? SVG_ANIMATION_CONFIG.inactive
             : hoveredCard === 'projects'
             ? SVG_ANIMATION_CONFIG.hover
@@ -231,9 +237,9 @@ const App: React.FC = () => {
       <motion.svg
         className="writings-svg"
         animate={
-          cardSelected && chosenCard === 'writings'
+          !isHomePage && currentCard === 'writings'
             ? SVG_ANIMATION_CONFIG.explosion
-            : cardSelected
+            : !isHomePage
             ? SVG_ANIMATION_CONFIG.inactive
             : hoveredCard === 'writings'
             ? SVG_ANIMATION_CONFIG.hover
@@ -272,9 +278,9 @@ const App: React.FC = () => {
       <motion.svg
         className="contact-svg"
         animate={
-          cardSelected && chosenCard === 'contact'
+          !isHomePage && currentCard === 'contact'
             ? SVG_ANIMATION_CONFIG.explosion
-            : cardSelected
+            : !isHomePage
             ? SVG_ANIMATION_CONFIG.inactive
             : hoveredCard === 'contact'
             ? SVG_ANIMATION_CONFIG.hover

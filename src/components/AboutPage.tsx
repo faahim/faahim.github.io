@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import BackToHomeBtn from './BackToHomeBtn';
 
-interface AboutPageProps {
-  returnBtn: () => void;
-}
-
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -60,7 +56,7 @@ const contentVariants = {
   }
 };
 
-const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
+const AboutPage: React.FC = () => {
   return (
     <>
       <Helmet>
@@ -74,7 +70,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
         animate="animate"
         exit="exit"
       >
-        <BackToHomeBtn handleClick={returnBtn} />
+        <BackToHomeBtn />
         <motion.p
           className="page-tag"
           variants={pageTagVariants}
@@ -99,7 +95,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
             <p>I'm based in Bangladesh, but my mind wanders to places. Thank God, the mind doesn't need visas.</p>
 
             <h3>Skills</h3>
-            <p>I believe in tool-agnostic core skills. This industry moves faster than over-caffeinated Usain Bolt. Tools and frameworks come and go as if they're having an existential crisis. I value the ability to pick up new skills quickly. So for me, it's fundamentals over frameworks. However, my go-to stack consists of <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Next.js</strong> etc.</p>
+            <p>I believe in tool-agnostic core skills. Right now, I live in <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Next.js</strong> etc. But this industry moves faster than over-caffeinated Usain Bolt. Tools and frameworks come and go as if they're having an existential crisis. I value the ability to pick up new skills quickly. So for me, it's fundamentals over frameworks.</p>
 
             <p>Simplicity and beauty are my north star. I like building things that calm the eye, and just work - no matter how complicated they are under the hood. Something that'd make you go, "Oh, that's nice!"</p>
 
@@ -107,7 +103,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
             <p>If I'm not online, I'm probably reading. Or I'm travelling. Or, I'm reading <em>while</em> travelling.</p>
             <p>I believe the world is a beautiful book I was gifted at birth, and I don't want to die before flipping through the pages and reading all the stories.</p>
             <p>I'm overwhelmed by just how interesting everything is. Writing, making friends, music, mountains, cats, arts, quiet forests, busy city streets, contrails at sunset and Orion on a dark night - I like too many things to be good at any single one of them!</p>
-            <p>My dream is to wander the world, read great books, write when ideas bite, meet people, listen to their stories, identify how I can help them using my skill and creativity, and build solutions from cozy coffee shops. Hopefully, with a loved one sitting across from me. 🤞</p>
+            <p>My dream is to wander the world, read great books, write when ideas bite, meet people, listen to their stories, figure out how I can help them with code and creativity, and build solutions from cozy coffee shops. Hopefully, with a loved one sitting across from me. 🤞</p>
           </div>
         </motion.div>
       </motion.div>

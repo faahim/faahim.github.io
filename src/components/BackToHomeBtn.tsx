@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export const BtnIcon: React.FC = () => {
@@ -9,10 +10,6 @@ export const BtnIcon: React.FC = () => {
     </svg>
   );
 };
-
-interface BackToHomeBtnProps {
-  handleClick: () => void;
-}
 
 const buttonVariants = {
   initial: {
@@ -31,10 +28,12 @@ const buttonVariants = {
   }
 };
 
-const BackToHomeBtn: React.FC<BackToHomeBtnProps> = ({ handleClick }) => {
+const BackToHomeBtn: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <motion.button
-      onClick={handleClick}
+      onClick={() => navigate('/')}
       className="btn-back"
       variants={buttonVariants}
       initial="initial"
