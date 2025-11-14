@@ -25,10 +25,6 @@ const ArticleList: React.FC<ArticleListProps> = ({ articleList }) => {
   );
 };
 
-interface WritingsPageProps {
-  returnBtn: () => void;
-}
-
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -82,7 +78,7 @@ const contentVariants = {
   }
 };
 
-const WritingsPage: React.FC<WritingsPageProps> = ({ returnBtn }) => {
+const WritingsPage: React.FC = () => {
   return (
     <>
       <Helmet>
@@ -96,7 +92,7 @@ const WritingsPage: React.FC<WritingsPageProps> = ({ returnBtn }) => {
         animate="animate"
         exit="exit"
       >
-        <BackToHomeBtn handleClick={returnBtn} />
+        <BackToHomeBtn />
         <motion.p
           className="page-tag"
           variants={pageTagVariants}

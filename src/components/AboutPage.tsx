@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import BackToHomeBtn from './BackToHomeBtn';
 
-interface AboutPageProps {
-  returnBtn: () => void;
-}
-
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -60,7 +56,7 @@ const contentVariants = {
   }
 };
 
-const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
+const AboutPage: React.FC = () => {
   return (
     <>
       <Helmet>
@@ -74,7 +70,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ returnBtn }) => {
         animate="animate"
         exit="exit"
       >
-        <BackToHomeBtn handleClick={returnBtn} />
+        <BackToHomeBtn />
         <motion.p
           className="page-tag"
           variants={pageTagVariants}

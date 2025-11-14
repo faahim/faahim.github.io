@@ -8,4 +8,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  // Vite dev server automatically handles SPA routing.
+  // For production, ensure your hosting provider redirects all routes to index.html
+  // (see public/_redirects for Netlify/Vercel configuration)
 })
