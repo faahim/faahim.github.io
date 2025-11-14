@@ -5,7 +5,7 @@ export interface Project {
   thumb: string;
   links: {
     live: string;
-    repo: string;
+    repo: string | null;
   };
 }
 
@@ -16,6 +16,16 @@ export interface Writing {
 }
 
 export const projectsData: Project[] = [
+  {
+    name: "RefinedTweets",
+    heading: "Take back control of your X/Twitter feed by creating your own algorithm.",
+    details: "RefinedTweets lets you curate your feed based on your preferences, essentially letting you create your own Twitter algorithm. It helps you grow your audience, discover more of the content you want, and improved the user experience by tweaking the UI and so much more! This is a passion project of mine that I've been working on for the past year.",
+    thumb: "https://faahim.github.io/refined-tweets/public/RefinedTweets.png",
+    links: {
+      live: "https://refinedtweets.com",
+      repo: null,
+    }
+  },
   {
     name: "Nest Tab",
     heading: "I was tired of switching between browser, code editor, To-do app and a Timer app. So I created Nest Tab.",
@@ -36,46 +46,6 @@ export const projectsData: Project[] = [
       repo: "https://github.com/faahim/local-weather-viewer"
     }
   },
-  {
-    name: "Tribute Page",
-    heading: "I had to pick someone to make a tribute page on, for the freeCodeCamp curriculum. I picked Quincy Larson.",
-    details: "Quincy Larson, who prefers to describe himself just as a teacher, is also the founder of freeCodeCamp. freeCodeCamp is a non-profit organization where anyone can learn to code for completely free of charge. Quincy is an inspiring name in the industry. Personally, he is one of the most inspiring people I've ever seen in my life. Not only for his amazing contribution to the society, but also for his astonishing way of living.",
-    thumb: "http://res.cloudinary.com/dzuqw67ww/image/upload/v1520693932/tributePage_fubijo.png",
-    links: {
-      live: "https://faahim.github.io/tribute-page/",
-      repo: "https://github.com/faahim/tribute-page"
-    }
-  },
-  {
-    name: "Twitch Coder",
-    heading: "I enjoy code streaming. There's a lot of great channels that streams live coding on Twitch. But I found that it was hard to find coding channels that are both good and active. So I looked up for some of the best channels and gathered them here.",
-    details: "This app is a directory to find some of the best code streaming channel on twitch.tv. It shows you a list of different channels along with live meta information like whether they are streaming right now, what they are steaming etc. You can also look up for any channel on Twitch using the Search UI. This app was made using JavaScript, HTML, and CSS. It uses the twitch.tv API to fetch channel information.",
-    thumb: "http://res.cloudinary.com/dzuqw67ww/image/upload/v1520693928/twichCoder_ea9rdb.png",
-    links: {
-      live: "https://faahim.github.io/twitch-coders/",
-      repo: "https://github.com/faahim/twitch-coders"
-    }
-  },
-  {
-    name: "Random Quote Generator",
-    heading: "I didn't understand how to consume API. I didn't know what they are, but they sounded complex. I built this little app to understand API.",
-    details: "It's a simple little web app that shows you a nice quote from famous people every time you press the button. It fetches the quotes from a Mashape API. You can also Tweet quotes if find one that you really like. This app was built using HTML, CSS and JavaScript(jQuery).",
-    thumb: "http://res.cloudinary.com/dzuqw67ww/image/upload/v1520693927/randomQuote_thfkne.png",
-    links: {
-      live: "https://faahim.github.io/random-quote-generator/",
-      repo: "https://github.com/faahim/random-quote-generator"
-    }
-  },
-  {
-    name: "Wikipedia Viewer",
-    heading: "Ever felt like the Wikipedia page could look a little nicer? I did.",
-    details: "A small JavaScript-based app that fetches results for any given strings from Wikipedia through the Wikipedia API and shows the results back on the page. This project was done as a part of the freeCodeCamp learning curriculum. It's built using HTML, CSS (SASS) and JavaScript (jQuery).",
-    thumb: "http://res.cloudinary.com/dzuqw67ww/image/upload/v1520693927/wikipediaViewer_qtqnlp.png",
-    links: {
-      live: "https://faahim.github.io/wikipedia-viewer/",
-      repo: "https://github.com/faahim/wikipedia-viewer"
-    }
-  }
 ];
 
 export const writingsData: Writing[] = [
